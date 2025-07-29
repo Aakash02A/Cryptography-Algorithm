@@ -76,11 +76,4 @@ python main.py
 2. Match against original to verify
 ```
 
----
-
-## 🔐 Why This Project?
-Perfect for students and beginners who want to understand the **core principles of modern cryptography** with hands-on experience in Python.
-
----
-
 # Build by AAKASH
