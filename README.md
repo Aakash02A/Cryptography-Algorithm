@@ -1,79 +1,110 @@
-# 🔐 Real-Time Cryptography Toolkit
+# 🔐 Cryptography Algorithm Toolkit
 
-A beginner-friendly Python CLI tool to explore real-world cryptographic techniques like AES, RSA, and SHA256.
-
----
-
-## 🚀 Features
-
-### 🔸 AES Encryption/Decryption (Symmetric)
-- Generate secure AES key
-- Encrypt and decrypt messages using `cryptography.Fernet`
-
-### 🔸 RSA Encryption/Decryption (Asymmetric)
-- Generate RSA key pair
-- Encrypt with public key, decrypt with private key (using `pycryptodome`)
-
-### 🔸 SHA256 Hashing
-- Generate SHA256 hash of any input
-- Verify data integrity by matching hash
+A beginner-friendly, real-time Python project that demonstrates core concepts of **modern cryptography** using **AES (symmetric encryption)**, **RSA (asymmetric encryption)**, and **SHA256 (hashing)**. Designed to simulate real-world use cases like secure messaging, file encryption, and password hashing.
 
 ---
 
-## 📁 Project Structure
-```
-crypto-toolkit/
-├── main.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-├── modules/
-│   ├── aes_module.py
-│   ├── rsa_module.py
-│   └── sha_module.py
-└── samples/         # (Optional) For testing inputs/outputs
-```
+## 📌 Project Objectives
+
+- Implement and understand core cryptographic techniques:
+  - **AES** for secure data encryption/decryption
+  - **RSA** for public/private key cryptography
+  - **SHA256** for one-way data hashing
+- Provide real-time user interaction
+- Create a modular, scalable architecture
+- Learn encryption workflow with file input/output and key handling
 
 ---
 
-## 🛠️ Requirements
-```
-pip install -r requirements.txt
+## 🧰 Technologies & Tools
+
+- **Language:** Python 3.8+
+- **Libraries Used:**
+  - `cryptography` for AES & RSA
+  - `hashlib` for SHA256
+  - `os`, `base64`, `json` for file/key management
+- **Structure:** Modular folder system (`/modules`)
+- **Optional Tools:** `PyCrypto`, `OpenSSL`, `tkinter` (for GUI expansion)
+
+---
+
+## 🧪 Features & Demonstrations
+
+### 🔐 AES (Advanced Encryption Standard)
+- Generate and save AES key
+- Encrypt user input messages
+- Decrypt saved encrypted messages
+- Use `Fernet` for secure symmetric encryption
+
+### 🔑 RSA (Rivest–Shamir–Adleman)
+- Generate RSA key pair (public/private)
+- Encrypt a message using the public key
+- Decrypt it using the private key
+- Save/load RSA keys in `.pem` format
+
+### 🔁 SHA256 Hashing
+- Hash plain text securely
+- Hash any file for integrity checking
+- Compare original vs current hash for tamper detection
+
+---
+
+## 💡 Real-Time Use Cases Simulated
+
+| Use Case                    | Crypto Technique Used |
+|----------------------------|------------------------|
+| Secure messaging           | AES                    |
+| Digital signatures         | RSA                    |
+| Password storage/verification | SHA256             |
+| File tampering detection   | SHA256                 |
+| Key-based access systems   | RSA                    |
+
+---
+
+## 🧪 Sample Outputs
+
+### 🔐 Sample AES Output
+
+```bash
+Enter message to encrypt: Hello Aakash
+Encrypted: gAAAAABo...
+Decrypted: Hello Aakash
 ```
 
-Or install manually:
+### 🔐 RSA Output
+
+```bash
+Enter message to encrypt: SecretMessage
+Encrypted with Public Key: b'...'
+Decrypted with Private Key: SecretMessage
 ```
+
+### 🔐SHA256 Output
+
+```bash
+Copy code
+Input text: AAKASH
+Hash: ac98f72f...
+```
+
+## 📌 Future Improvements
+
+✅ Add GUI with Tkinter or PyQt
+✅ Support file encryption/decryption
+✅ Add digital signature verification
+✅ Use Salted Hashing for password security
+✅ Store hash-key mapping securely in a DB (e.g., SQLite)
+
+---
+
+## Requirements 
+
+```bash
 pip install cryptography pycryptodome
 ```
 
 ---
 
-## ✅ Usage
-Run the tool from your terminal:
-```
-python main.py
-```
+# Build by Aakash
 
----
 
-## 📌 Example: AES Encryption
-```
-1. Generate AES key
-2. Encrypt "hello world"
-3. Decrypt the result
-```
-
-## 📌 Example: RSA Encryption
-```
-1. Generate RSA keys
-2. Encrypt "secret message"
-3. Decrypt using private key
-```
-
-## 📌 Example: SHA256 Hash
-```
-1. Hash input string
-2. Match against original to verify
-```
-
-# Build by AAKASH
