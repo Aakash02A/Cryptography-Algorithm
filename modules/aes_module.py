@@ -41,17 +41,17 @@ def decrypt_message():
             with open(file_path, "rb") as file:
                 encrypted_message = file.read()
         except FileNotFoundError:
-            print("❌ File not found.")
+            print("File not found.")
             return
     else:
-        print("❌ Invalid choice.")
+        print("Invalid choice.")
         return
 
     try:
         decrypted = f.decrypt(encrypted_message)
         print(f"\n🔓 Decrypted message:\n{decrypted.decode()}")
     except Exception as e:
-        print("❌ Decryption failed. Reason:", e)
+        print("Decryption failed. Reason:", e)
 
 def aes_menu():
     while True:
@@ -72,4 +72,4 @@ def aes_menu():
         elif choice == '4':
             break
         else:
-            print("❌ Invalid choice. Please enter 1-4.")
+            print("Invalid choice. Please enter 1-4.")
