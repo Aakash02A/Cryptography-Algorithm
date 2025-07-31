@@ -1,3 +1,5 @@
+# Advanced Encryption Standard
+
 from cryptography.fernet import Fernet
 import os
 
@@ -5,11 +7,11 @@ def generate_key():
     key = Fernet.generate_key()
     with open("aes_key.key", "wb") as key_file:
         key_file.write(key)
-    print("🔑 AES key generated and saved to 'aes_key.key'.")
+    print("AES key generated and saved to 'aes_key.key'.")
 
 def load_key():
     if not os.path.exists("aes_key.key"):
-        print("⚠️ No AES key found. Generating a new one.")
+        print("No AES key found. Generating a new one.")
         generate_key()
     with open("aes_key.key", "rb") as key_file:
         return key_file.read()
@@ -19,14 +21,14 @@ def encrypt_message():
     f = Fernet(key)
     message = input("Enter the message to encrypt: ").encode()
     encrypted = f.encrypt(message)
-    print(f"\n🔐 Encrypted message:\n{encrypted.decode()}")
+    print(f"\nEncrypted message:\n{encrypted.decode()}")
 
     save = input("\nDo you want to save the encrypted message to a file? (y/n): ").lower()
     if save == 'y':
         os.makedirs("samples", exist_ok=True)
         with open("samples/encrypted_output.txt", "wb") as f_out:
             f_out.write(encrypted)
-        print("✅ Encrypted message saved to 'samples/encrypted_output.txt'.")
+        print("Encrypted message saved to 'samples/encrypted_output.txt'.")
 
 def decrypt_message():
     key = load_key()
@@ -49,7 +51,7 @@ def decrypt_message():
 
     try:
         decrypted = f.decrypt(encrypted_message)
-        print(f"\n🔓 Decrypted message:\n{decrypted.decode()}")
+        print(f"\nDecrypted message:\n{decrypted.decode()}")
     except Exception as e:
         print("Decryption failed. Reason:", e)
 
