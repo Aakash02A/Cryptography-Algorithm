@@ -1,11 +1,11 @@
-# modules/sha_module.py
+# sha_module.py
 
 import hashlib
 
 def hash_text_input():
     text = input("Enter the text to hash using SHA256: ")
     hashed = hashlib.sha256(text.encode()).hexdigest()
-    print(f"\n🔐 SHA256 Hash:\n{hashed}")
+    print(f"\nSHA256 Hash:\n{hashed}")
 
 def hash_file():
     file_path = input("Enter the file path to hash: ").strip()
@@ -13,11 +13,11 @@ def hash_file():
         with open(file_path, "rb") as f:
             file_data = f.read()
             hashed = hashlib.sha256(file_data).hexdigest()
-            print(f"\n📁 SHA256 Hash of file '{file_path}':\n{hashed}")
+            print(f"\nSHA256 Hash of file '{file_path}':\n{hashed}")
     except FileNotFoundError:
-        print("❌ File not found.")
+        print("File not found.")
     except Exception as e:
-        print("❌ Error reading file:", e)
+        print("Error reading file:", e)
 
 def sha_menu():
     while True:
