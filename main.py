@@ -1,9 +1,11 @@
 from modules.aes_module import aes_menu
 from modules.rsa_module import rsa_menu
 from modules.sha_module import sha_menu
+from modules.zmy_ency model import 
+
 
 def main():
-    print("🔐 Welcome to the Real-Time Cryptography Toolkit 🔐\n")
+    print("Welcome to work on my CryptoGraphy Toolkit...\n")
 
     while True:
         print("\nChoose an option:")
@@ -21,7 +23,9 @@ def main():
         elif choice == '3':
             sha_menu()
         elif choice == '4':
-            print("Goodbye! 👋")
+            print("my module")
+        elif choice == '5':
+            print("Happy to see you again!!")
             break
         else:
             print("Invalid choice. Please enter a number between 1 and 4.")
