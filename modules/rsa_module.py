@@ -1,3 +1,5 @@
+# Rivest-Shamir-Adleman)
+
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP
 import os
@@ -17,14 +19,14 @@ def generate_rsa_keys():
     with open(os.path.join(KEY_FOLDER, "public_key.pem"), "wb") as pub_file:
         pub_file.write(public_key)
 
-    print("✅ RSA Key Pair generated and saved in 'rsa_keys/' directory.")
+    print("RSA Key Pair generated and saved in 'rsa_keys/' directory.")
 
 def load_public_key():
     try:
         with open(os.path.join(KEY_FOLDER, "public_key.pem"), "rb") as pub_file:
             return RSA.import_key(pub_file.read())
     except FileNotFoundError:
-        print("❌ Public key not found. Please generate keys first.")
+        print("Public key not found. Please generate keys first.")
         return None
 
 def load_private_key():
@@ -32,7 +34,7 @@ def load_private_key():
         with open(os.path.join(KEY_FOLDER, "private_key.pem"), "rb") as priv_file:
             return RSA.import_key(priv_file.read())
     except FileNotFoundError:
-        print("❌ Private key not found. Please generate keys first.")
+        print("Private key not found. Please generate keys first.")
         return None
 
 def encrypt_rsa():
@@ -44,13 +46,13 @@ def encrypt_rsa():
     cipher = PKCS1_OAEP.new(public_key)
     encrypted = cipher.encrypt(message)
 
-    print(f"\n🔐 Encrypted message (in bytes):\n{encrypted}")
+    print(f"\nEncrypted message (in bytes):\n{encrypted}")
     
     save = input("\nSave encrypted message to a file? (y/n): ").lower()
     if save == 'y':
         with open("samples/rsa_encrypted.bin", "wb") as f:
             f.write(encrypted)
-        print("✅ Saved to 'samples/rsa_encrypted.bin'.")
+        print("Saved to 'samples/rsa_encrypted.bin'.")
 
 def decrypt_rsa():
     private_key = load_private_key()
@@ -64,7 +66,7 @@ def decrypt_rsa():
         try:
             encrypted_data = eval(hex_data)
         except Exception as e:
-            print("❌ Error reading input:", e)
+            print("Error reading input:", e)
             return
     elif choice == '2':
         path = input("Enter the file path of the encrypted data: ")
@@ -72,18 +74,18 @@ def decrypt_rsa():
             with open(path, "rb") as f:
                 encrypted_data = f.read()
         except FileNotFoundError:
-            print("❌ File not found.")
+            print("File not found.")
             return
     else:
-        print("❌ Invalid choice.")
+        print("Invalid choice.")
         return
 
     try:
         cipher = PKCS1_OAEP.new(private_key)
         decrypted = cipher.decrypt(encrypted_data)
-        print(f"\n🔓 Decrypted message:\n{decrypted.decode()}")
+        print(f"\nDecrypted message:\n{decrypted.decode()}")
     except Exception as e:
-        print("❌ Decryption failed. Reason:", e)
+        print("Decryption failed. Reason:", e)
 
 def rsa_menu():
     while True:
