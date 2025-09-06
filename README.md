@@ -1,6 +1,6 @@
 # 🔐 Cryptography Algorithm Toolkit
 
-A beginner-friendly, real-time Python project that demonstrates core concepts of **modern cryptography** using **AES (symmetric encryption)**, **RSA (asymmetric encryption)**, and **SHA256 (hashing)**. Designed to simulate real-world use cases like secure messaging, file encryption, and password hashing.
+A beginner-friendly, real-time Python project that demonstrates core concepts of **modern cryptography** using **AES (symmetric encryption)**, **RSA (asymmetric encryption)**,**SHA256 (hashing)** and **Enky (custom XOR-based encryption)**. Designed to simulate real-world use cases like secure messaging, file encryption, and password hashing.
 
 ---
 
@@ -10,6 +10,7 @@ A beginner-friendly, real-time Python project that demonstrates core concepts of
   - **AES** for secure data encryption/decryption
   - **RSA** for public/private key cryptography
   - **SHA256** for one-way data hashing
+  - **Enky** for experimental key-based XOR encryption
 - Provide real-time user interaction
 - Create a modular, scalable architecture
 - Learn encryption workflow with file input/output and key handling
@@ -47,6 +48,14 @@ A beginner-friendly, real-time Python project that demonstrates core concepts of
 - Hash any file for integrity checking
 - Compare original vs current hash for tamper detection
 
+### 🌀 Enky (Custom XOR-Based Encryption)
+- Interactive menu-based encryption/decryption
+- Key-dependent XOR encryption for learning purposes
+- Supports text messages in real-time
+- Optional multi-round encryption or shuffle can be added
+- Fully reversible with the correct key
+- Ideal for experimenting with custom symmetric encryption logic
+
 ---
 
 ## 💡 Real-Time Use Cases Simulated
@@ -58,6 +67,7 @@ A beginner-friendly, real-time Python project that demonstrates core concepts of
 | Password storage/verification | SHA256             |
 | File tampering detection   | SHA256                 |
 | Key-based access systems   | RSA                    |
+| Experimental learning cipher| Enky                  |
 
 ---
 
@@ -82,10 +92,18 @@ Decrypted with Private Key: SecretMessage
 ### 🔐SHA256 Output
 
 ```bash
-Copy code
 Input text: AAKASH
 Hash: ac98f72f...
 ```
+### 🌀 Enky Output
+
+```bash
+Enter message to encrypt: AAKASH
+Enter key: 234
+Encrypted (bytes):  b'\xbagX\xc4\x87\xea'
+Decrypted message: AAKASH
+```
+
 
 ## 📌 Future Improvements
 
@@ -94,6 +112,7 @@ Hash: ac98f72f...
 ✅ Add digital signature verification
 ✅ Use Salted Hashing for password security
 ✅ Store hash-key mapping securely in a DB (e.g., SQLite)
+✅ Expand Enky with multiple rounds and key-based shuffling
 
 ---
 
@@ -104,7 +123,4 @@ pip install cryptography pycryptodome
 ```
 
 ---
-
-# Build by Aakash
-
 

@@ -1,7 +1,7 @@
 from modules.aes_module import aes_menu
 from modules.rsa_module import rsa_menu
 from modules.sha_module import sha_menu
-from modules.zmy_ency model import 
+from modules.zmy_ency import zmy_menu
 
 
 def main():
