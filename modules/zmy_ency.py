@@ -44,5 +44,3 @@ def zmy_menu():
             break
         else:
             print("Invalid task number...")
-
-zmy_menu()
