@@ -5,7 +5,7 @@ from Crypto.Random import get_random_bytes
 
 # ── helpers ───────────────────────────────────────────────────────────────────
 
-def _save_output(content: str, filename: str = "ccm_output.txt") -> None:
+def _save_output(content: str, filename: str = "gcm_output.txt") -> None:
     os.makedirs("samples", exist_ok=True)
     path = os.path.join("samples", filename)
     with open(path, "w") as f:
@@ -42,19 +42,19 @@ def _get_key() -> bytes | None:
 # ── core functions ────────────────────────────────────────────────────────────
 
 def generate_key() -> None:
-    print("\n--- AES-CCM Key Generation (256-bit) ---")
+    print("\n--- AES-GCM Key Generation (256-bit) ---")
     key = get_random_bytes(32)
     hex_key = key.hex()
     print(f"  Key (hex): {hex_key}")
-    print("  CCM is an AEAD mode commonly used in IoT and embedded systems (IEEE 802.15.4, Bluetooth).")
+    print("  GCM is the recommended AEAD mode — provides encryption + authentication.")
     save = input("\n  Save key to file? (y/n): ").strip().lower()
     if save == "y":
-        _save_output(f"AES-CCM Key (256-bit):\n{hex_key}\n", "ccm_key.txt")
+        _save_output(f"AES-GCM Key (256-bit):\n{hex_key}\n", "gcm_key.txt")
 
 
 def encrypt_message() -> None:
-    print("\n--- AES-CCM Encryption (Authenticated Encryption) ---")
-    print("  CCM requires knowing the message length before encryption starts.\n")
+    print("\n--- AES-GCM Encryption (Authenticated Encryption) ---")
+    print("  GCM provides both confidentiality and integrity.\n")
     key = _get_key()
     if key is None:
         return
@@ -68,10 +68,9 @@ def encrypt_message() -> None:
     aad = aad_input.encode() if aad_input else None
 
     try:
-        nonce = get_random_bytes(11)
-        msg_len = len(plaintext.encode())
+        nonce = get_random_bytes(12)
+        cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
 
-        cipher = AES.new(key, AES.MODE_CCM, nonce=nonce, mac_len=16, msg_len=msg_len)
         if aad:
             cipher.update(aad)
 
@@ -81,22 +80,21 @@ def encrypt_message() -> None:
         hex_cipher = ciphertext.hex()
         hex_tag = tag.hex()
 
-        print(f"\n  Nonce      (hex): {hex_nonce}  ← 11 bytes")
+        print(f"\n  Nonce      (hex): {hex_nonce}")
         print(f"  Ciphertext (hex): {hex_cipher}")
-        print(f"  Auth Tag   (hex): {hex_tag}  ← 16-byte MAC")
+        print(f"  Auth Tag   (hex): {hex_tag}  ← 16-byte authentication tag")
         if aad:
-            print(f"  AAD            : {aad_input}")
+            print(f"  AAD            : {aad_input}  ← authenticated but NOT encrypted")
 
         save = input("\n  Save output to file? (y/n): ").strip().lower()
         if save == "y":
             output = (
-                f"AES-CCM Encryption Output\n"
+                f"AES-GCM Encryption Output\n"
                 f"Key       : {key.hex()}\n"
                 f"Nonce     : {hex_nonce}\n"
                 f"Ciphertext: {hex_cipher}\n"
                 f"Auth Tag  : {hex_tag}\n"
                 f"AAD       : {aad_input if aad_input else 'None'}\n"
-                f"Msg Len   : {msg_len} bytes\n"
             )
             _save_output(output)
     except Exception as e:
@@ -104,7 +102,8 @@ def encrypt_message() -> None:
 
 
 def decrypt_message() -> None:
-    print("\n--- AES-CCM Decryption + Verification ---")
+    print("\n--- AES-GCM Decryption + Verification ---")
+    print("  GCM will reject tampered ciphertext or wrong key.\n")
     key = _get_key()
     if key is None:
         return
@@ -119,9 +118,8 @@ def decrypt_message() -> None:
         ciphertext = bytes.fromhex(hex_cipher)
         tag = bytes.fromhex(hex_tag)
         aad = aad_input.encode() if aad_input else None
-        msg_len = len(ciphertext)
 
-        cipher = AES.new(key, AES.MODE_CCM, nonce=nonce, mac_len=16, msg_len=msg_len)
+        cipher = AES.new(key, AES.MODE_GCM, nonce=nonce)
         if aad:
             cipher.update(aad)
 
@@ -134,51 +132,53 @@ def decrypt_message() -> None:
         print(f"  [Error] Decryption failed: {e}")
 
 
-def show_how_ccm_works() -> None:
-    print("\n--- How CCM Works ---")
+def show_how_gcm_works() -> None:
+    print("\n--- How GCM Works ---")
     print("""
-  CCM = CTR mode encryption + CBC-MAC authentication
-  (Counter with CBC-MAC)
+  GCM = CTR mode encryption + GHASH authentication
 
-  Steps:
-    1. CBC-MAC is computed over (Nonce, AAD, Plaintext) → Tag
-    2. Plaintext is encrypted using CTR mode → Ciphertext
-    3. Tag is also encrypted with CTR (counter=0) → Encrypted Tag
+  Encryption:
+    Nonce||0 ──► Encrypt ──► Auth Key (H)
+    Nonce||1 ──► Encrypt ──► XOR ──► C1
+                              ↑
+                              P1
+    Nonce||2 ──► Encrypt ──► XOR ──► C2
+                              ↑
+                              P2
 
-  vs GCM:
-    CCM                          GCM
-    ─────────────────────────    ────────────────────────
-    CBC-MAC (sequential)         GHASH (parallelizable)
-    Nonce: 7–13 bytes            Nonce: 12 bytes preferred
-    Must know msg len upfront    Streaming friendly
-    Common in IoT / 802.15.4     Common in TLS / web
+  Authentication:
+    GHASH(H, AAD, Ciphertext) ──► Auth Tag (16 bytes)
+
+  AAD (Additional Authenticated Data):
+    Data that is authenticated but NOT encrypted.
+    Useful for headers, metadata, or sender identity.
 
   Key properties:
-    ✅ AEAD — encryption + authentication in one step
-    ✅ Widely used in Bluetooth LE, ZigBee, IEEE 802.15.4
-    ✅ FIPS-approved
-    ⚠ Message length must be known before encryption
-    ⚠ Not parallelizable (CBC-MAC is sequential)
-    ⚠ Nonce must never be reused
+    ✅ Provides both encryption AND authentication (AEAD)
+    ✅ Fully parallelizable
+    ✅ No padding needed
+    ✅ Detects tampering, corruption, or wrong key
+    ✅ Industry standard — used in TLS 1.3, SSH, etc.
+    ⚠ Nonce MUST be unique per encryption (12 bytes recommended)
+    ⚠ Nonce reuse is catastrophic — leaks the auth key H
     """)
 
 
 # ── menu ──────────────────────────────────────────────────────────────────────
 
-def ccm_menu() -> None:
+def gcm_menu() -> None:
     while True:
-        print("\n--- CCM (Counter with CBC-MAC) Mode ---")
+        print("\n--- GCM (Galois/Counter Mode) ---")
         print("  Cipher   : AES-256")
-        print("  Nonce    : 11 bytes (random, auto-generated)")
+        print("  Nonce    : 12 bytes (random, auto-generated)")
         print("  Padding  : None")
         print("  Auth Tag : Yes — 16 bytes (AEAD)")
         print("  AAD      : Supported")
-        print("  Use Case : IoT, Bluetooth LE, IEEE 802.15.4")
         print()
         print("  1. Generate Key")
         print("  2. Encrypt Message")
         print("  3. Decrypt + Verify Message")
-        print("  4. How CCM Works")
+        print("  4. How GCM Works")
         print("  5. Back")
 
         choice = input("\n  Select option: ").strip()
@@ -190,7 +190,7 @@ def ccm_menu() -> None:
         elif choice == "3":
             decrypt_message()
         elif choice == "4":
-            show_how_ccm_works()
+            show_how_gcm_works()
         elif choice == "5":
             break
         else:
