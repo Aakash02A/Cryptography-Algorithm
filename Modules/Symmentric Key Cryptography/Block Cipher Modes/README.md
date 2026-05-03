@@ -8,8 +8,8 @@
 
 ```
 modules/
-└── symmetric/
-    └── block_cipher_modes/
+└── Symmetric Key Cryptography/
+    └── Block Cipher Modes/
         ├── ecb.py
         ├── cbc.py
         ├── cfb.py
