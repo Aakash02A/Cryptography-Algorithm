@@ -119,7 +119,7 @@ Decrypted message: AAKASH
 ## Requirements 
 
 ```bash
-pip install cryptography pycryptodome
+python -m pip install -r requirements.txt
 ```
 
 ---

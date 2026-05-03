@@ -1,12 +1,11 @@
 import os
-from Crypto.Cipher import DES
-from Crypto.Util.Padding import pad, unpad
-from Crypto.Random import get_random_bytes
+import hashlib
+from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 
 
-# ── helpers ───────────────────────────────────────────────────────────────────
+# ── helpers ──────────────────────────────────────────────────────────────────
 
-def _save_output(content: str, filename: str = "des_output.txt") -> None:
+def _save_output(content: str, filename: str = "aes_output.txt") -> None:
     os.makedirs("samples", exist_ok=True)
     path = os.path.join("samples", filename)
     with open(path, "w") as f:
@@ -16,20 +15,20 @@ def _save_output(content: str, filename: str = "des_output.txt") -> None:
 
 def _get_key() -> bytes | None:
     print("\n  Key options:")
-    print("  1. Auto-generate 56-bit key (8 bytes)")
+    print("  1. Auto-generate 256-bit key")
     print("  2. Enter key manually (hex)")
     choice = input("  Choice: ").strip()
 
     if choice == "1":
-        key = get_random_bytes(8)
+        key = AESGCM.generate_key(bit_length=256)
         print(f"  Generated Key (hex): {key.hex()}")
         return key
     elif choice == "2":
-        raw = input("  Enter 8-byte key (16 hex chars): ").strip()
+        raw = input("  Enter 256-bit key (64 hex chars): ").strip()
         try:
             key = bytes.fromhex(raw)
-            if len(key) != 8:
-                print("  [Error] DES key must be exactly 8 bytes (16 hex chars).")
+            if len(key) != 32:
+                print("  [Error] Key must be exactly 32 bytes (64 hex chars).")
                 return None
             return key
         except ValueError:
@@ -43,18 +42,17 @@ def _get_key() -> bytes | None:
 # ── core functions ────────────────────────────────────────────────────────────
 
 def generate_key() -> None:
-    print("\n--- DES Key Generation (56-bit / 8 bytes) ---")
-    key = get_random_bytes(8)
+    print("\n--- AES Key Generation (256-bit) ---")
+    key = AESGCM.generate_key(bit_length=256)
     hex_key = key.hex()
     print(f"  Key (hex): {hex_key}")
-    print("  ⚠ Warning: DES is considered insecure. Use for educational purposes only.")
     save = input("\n  Save key to file? (y/n): ").strip().lower()
     if save == "y":
-        _save_output(f"DES Key (56-bit):\n{hex_key}\n", "des_key.txt")
+        _save_output(f"AES-256 Key:\n{hex_key}\n", "aes_key.txt")
 
 
 def encrypt_message() -> None:
-    print("\n--- DES-CBC Encryption ---")
+    print("\n--- AES-GCM Encryption ---")
     key = _get_key()
     if key is None:
         return
@@ -65,22 +63,22 @@ def encrypt_message() -> None:
         return
 
     try:
-        cipher = DES.new(key, DES.MODE_CBC)
-        padded = pad(plaintext.encode(), DES.block_size)
-        ciphertext = cipher.encrypt(padded)
+        aesgcm = AESGCM(key)
+        nonce = os.urandom(12)
+        ciphertext = aesgcm.encrypt(nonce, plaintext.encode(), None)
 
-        hex_iv = cipher.iv.hex()
+        hex_nonce = nonce.hex()
         hex_cipher = ciphertext.hex()
 
-        print(f"\n  IV         (hex): {hex_iv}")
+        print(f"\n  Nonce    (hex): {hex_nonce}")
         print(f"  Ciphertext (hex): {hex_cipher}")
 
         save = input("\n  Save output to file? (y/n): ").strip().lower()
         if save == "y":
             output = (
-                f"DES-CBC Encryption Output\n"
+                f"AES-GCM Encryption Output\n"
                 f"Key       : {key.hex()}\n"
-                f"IV        : {hex_iv}\n"
+                f"Nonce     : {hex_nonce}\n"
                 f"Ciphertext: {hex_cipher}\n"
             )
             _save_output(output)
@@ -89,35 +87,33 @@ def encrypt_message() -> None:
 
 
 def decrypt_message() -> None:
-    print("\n--- DES-CBC Decryption ---")
+    print("\n--- AES-GCM Decryption ---")
     key = _get_key()
     if key is None:
         return
 
     try:
-        hex_iv = input("  Enter IV (hex): ").strip()
+        hex_nonce = input("  Enter Nonce (hex): ").strip()
         hex_cipher = input("  Enter Ciphertext (hex): ").strip()
-        iv = bytes.fromhex(hex_iv)
+        nonce = bytes.fromhex(hex_nonce)
         ciphertext = bytes.fromhex(hex_cipher)
 
-        cipher = DES.new(key, DES.MODE_CBC, iv=iv)
-        padded = cipher.decrypt(ciphertext)
-        plaintext = unpad(padded, DES.block_size)
+        aesgcm = AESGCM(key)
+        plaintext = aesgcm.decrypt(nonce, ciphertext, None)
         print(f"\n  Decrypted Message: {plaintext.decode()}")
     except ValueError as e:
-        print(f"  [Error] Invalid input or padding error: {e}")
+        print(f"  [Error] Invalid hex input: {e}")
     except Exception as e:
-        print(f"  [Error] Decryption failed: {e}")
+        print(f"  [Error] Decryption failed (wrong key or corrupted data): {e}")
 
 
 # ── menu ──────────────────────────────────────────────────────────────────────
 
-def des_menu() -> None:
+def aes_menu() -> None:
     while True:
-        print("\n--- DES (Data Encryption Standard) ---")
-        print("  Mode : CBC")
-        print("  Key  : 56-bit (8 bytes)")
-        print("  ⚠ Note: DES is deprecated — educational use only")
+        print("\n--- AES (Advanced Encryption Standard) ---")
+        print("  Mode : GCM (Authenticated Encryption)")
+        print("  Key  : 256-bit")
         print()
         print("  1. Generate Key")
         print("  2. Encrypt Message")
