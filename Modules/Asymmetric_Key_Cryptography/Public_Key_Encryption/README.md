@@ -1,6 +1,6 @@
 # Asymmetric Key Cryptography - Public Key Encryption
 
-> A CLI-based collection of asymmetric cryptography implementations focused on public-key encryption and number-theoretic primitives. This folder groups together four educational modules: RSA, ElGamal, Paillier, and Rabin.
+> A CLI-based collection of **4 asymmetric cryptography implementations focused on public-key encryption** and number-theoretic primitives. This folder groups together four educational modules: RSA, ElGamal, Paillier, and Rabin.
 
 ---
 
@@ -13,8 +13,7 @@ Modules/
         ├── rsa.py
         ├── ElGamal.py
         ├── Paillier.py
-        ├── Rabin.py
-        └── README.md
+        └── Rabin.py
 ```
 
 ---
