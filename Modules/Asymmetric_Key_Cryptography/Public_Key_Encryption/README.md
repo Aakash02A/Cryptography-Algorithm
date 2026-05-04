@@ -1,6 +1,6 @@
-# Asymmetric Key Cryptography - Key Exchange and Public Key Primitives
+# Asymmetric Key Cryptography - Public Key Encryption
 
-> A CLI-based collection of asymmetric cryptography implementations focused on key generation, public-key encryption, and number-theoretic primitives. This folder groups together four educational modules: RSA, ElGamal, Paillier, and Rabin.
+> A CLI-based collection of asymmetric cryptography implementations focused on public-key encryption and number-theoretic primitives. This folder groups together four educational modules: RSA, ElGamal, Paillier, and Rabin.
 
 ---
 
@@ -9,7 +9,7 @@
 ```
 Modules/
 └── Asymmetric_Key_Cryptography/
-    └── Key_Exchange/
+  └── Public_Key_Encryption/
         ├── rsa.py
         ├── ElGamal.py
         ├── Paillier.py
@@ -28,7 +28,7 @@ Modules/
 | Paillier | Paillier Cryptosystem | Composite residuosity | Pure Python | Additively homomorphic encryption |
 | Rabin | Rabin Cryptosystem | Quadratic residues and integer factorization | Pure Python | Fast encryption, academic study |
 
-> RSA is included as the most widely used public-key primitive in this folder, even though the other modules emphasize classic key-exchange-style or encryption schemes.
+> RSA is included as the most widely used public-key primitive in this folder, even though the other modules emphasize classic encryption schemes.
 
 ---
 
@@ -219,10 +219,10 @@ c = m^2 mod N
 ## Integration
 
 ```python
-from Modules.Asymmetric_Key_Cryptography.Key_Exchange.rsa import rsa_menu
-from Modules.Asymmetric_Key_Cryptography.Key_Exchange.ElGamal import elgamal_menu
-from Modules.Asymmetric_Key_Cryptography.Key_Exchange.Paillier import paillier_menu
-from Modules.Asymmetric_Key_Cryptography.Key_Exchange.Rabin import rabin_menu
+from Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.rsa import rsa_menu
+from Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.ElGamal import elgamal_menu
+from Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.Paillier import paillier_menu
+from Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.Rabin import rabin_menu
 
 # Launch a specific module menu
 rsa_menu()
