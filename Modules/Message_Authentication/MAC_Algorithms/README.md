@@ -1,6 +1,6 @@
 # Message Authentication — MAC Algorithms
 
-> A small, CLI-focused collection of Message Authentication Code (MAC) demos and helpers. This folder demonstrates common MAC constructions used to provide integrity and authenticity for messages and files.
+> A small, CLI-focused collection of **4 Message Authentication Code (MAC) demos and helpers**. This folder demonstrates common MAC constructions used to provide integrity and authenticity for messages and files.
 
 ---
 
@@ -13,8 +13,7 @@ Modules/
 				├── HMAC.py
 				├── CMAC.py
 				├── Poly1305.py
-				├── GMAC.py
-				└── README.py
+				└── GMAC.py
 ```
 
 ---
