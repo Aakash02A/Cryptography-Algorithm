@@ -9,11 +9,12 @@
 
 ```
 modules/
-└── aead/
-    ├── aesgcm.py
-    ├── aesccm.py
-    ├── chacha20poly1305.py
-    └── ocb.py
+└── Authenticated_Encryption(AEAD)/
+    └──Integrated_Encryption__Integrity/
+        ├── aesgcm.py
+        ├── aesccm.py
+        ├── chacha20poly1305.py
+        └── ocb.py
 ```
 
 ---
