@@ -8,8 +8,8 @@
 
 ```
 modules/
-└── advanced/
-    └── zero_knowledge/
+└── Advanced_Cryptography/
+    └── Zero_Knowledge_Proofs/
         ├── zkp.py          ← Schnorr sigma protocol (interactive + NIZK)
         ├── zksnark.py      ← Groth16 zk-SNARK (R1CS → QAP → proof)
         └── zkstark.py      ← zk-STARK (AIR + FRI + Merkle commitments)
@@ -23,7 +23,7 @@ modules/
 |-------------|---------------|--------------------|---------------------------|------------|--------------|
 | ZKP         | `zkp.py`      | Schnorr sigma      | 2048-bit safe prime group | None       | ❌           |
 | zk-SNARK    | `zksnark.py`  | Groth16            | BN254 scalar field        | Trusted    | ❌           |
-| zk-STARK    | `zkstark.py`  | FRI + AIR          | Goldilocks (2⁶⁴−2³²+1)   | None       | ✅           |
+| zk-STARK    | `zkstark.py`  | FRI + AIR          | Goldilocks (2⁶⁴−2³²+1)    | None       | ✅           |
 
 ---
 
