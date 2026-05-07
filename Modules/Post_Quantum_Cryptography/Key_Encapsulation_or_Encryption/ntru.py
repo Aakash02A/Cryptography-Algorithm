@@ -259,9 +259,9 @@ def show_how_ntru_works() -> None:
   │    e = r·h + m  mod q      (ciphertext)                 │
   │                                                         │
   │  Decrypt:                                               │
-  │    a = f·e mod q           = f·r·h + f·m  mod q        │
-  │      = f·r·p·Fq·g + f·m   mod q                        │
-  │      ≈ p·r·g + f·m         (small coefficients)        │
+  │    a = f·e mod q           = f·r·h + f·m  mod q         │
+  │      = f·r·p·Fq·g + f·m   mod q                         │
+  │      ≈ p·r·g + f·m         (small coefficients)         │
   │    m = a·Fp  mod p         (Fp = f^{-1} mod p)          │
   └─────────────────────────────────────────────────────────┘
 

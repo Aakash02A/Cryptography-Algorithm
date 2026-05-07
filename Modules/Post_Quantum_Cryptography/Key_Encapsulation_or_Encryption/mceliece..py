@@ -335,29 +335,29 @@ def show_how_mceliece_works() -> None:
   ┌─────────────────────────────────────────────────────────┐
   │           Classic McEliece Architecture                 │
   ├─────────────────────────────────────────────────────────┤
-  │  Setup:  Binary Goppa code C(n, k, t) over GF(2^m)     │
+  │  Setup:  Binary Goppa code C(n, k, t) over GF(2^m)      │
   │          Goppa polynomial g(x) of degree t              │
-  │          Support set L = {α₁,...,αₙ} ⊂ GF(2^m)         │
+  │          Support set L = {α₁,...,αₙ} ⊂ GF(2^m)          │
   │                                                         │
   │  KeyGen:                                                │
   │    g ← random irreducible degree-t polynomial in GF(2^m)│
-  │    L ← n distinct elements of GF(2^m)                  │
-  │    H ← parity check matrix of Goppa code               │
-  │    S ← random k×k invertible binary matrix             │
-  │    P ← random n×n permutation matrix                   │
-  │    G_pub = S · G_priv · P   (scrambled generator)      │
-  │    pk = G_pub,   sk = (g, L, S, P)                     │
+  │    L ← n distinct elements of GF(2^m)                   │
+  │    H ← parity check matrix of Goppa code                │
+  │    S ← random k×k invertible binary matrix              │
+  │    P ← random n×n permutation matrix                    │
+  │    G_pub = S · G_priv · P   (scrambled generator)       │
+  │    pk = G_pub,   sk = (g, L, S, P)                      │
   │                                                         │
   │  Encrypt (KEM: encapsulate):                            │
-  │    m  ← random k-bit message                           │
-  │    e  ← random weight-t error vector (n bits)          │
-  │    ct = m · G_pub + e  (in GF(2)^n)                    │
+  │    m  ← random k-bit message                            │
+  │    e  ← random weight-t error vector (n bits)           │
+  │    ct = m · G_pub + e  (in GF(2)^n)                     │
   │    ss = KDF(m)          ← shared secret                 │
   │                                                         │
   │  Decrypt (KEM: decapsulate):                            │
-  │    c' = ct · P^{-1}    ← remove permutation            │
-  │    m' = Patterson(c')  ← error-correct using g, L      │
-  │    m  = m' · S^{-1}    ← remove scrambling             │
+  │    c' = ct · P^{-1}    ← remove permutation             │
+  │    m' = Patterson(c')  ← error-correct using g, L       │
+  │    m  = m' · S^{-1}    ← remove scrambling              │
   │    ss = KDF(m)          ← shared secret                 │
   └─────────────────────────────────────────────────────────┘
 

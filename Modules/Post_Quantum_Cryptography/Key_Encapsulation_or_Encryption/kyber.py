@@ -313,19 +313,19 @@ def show_how_kyber_works() -> None:
   ┌─────────────────────────────────────────────────────────┐
   │              Kyber KEM Architecture                     │
   ├─────────────────────────────────────────────────────────┤
-  │  Setup:  Public matrix A over Z_q[x]/(x^256 + 1)       │
+  │  Setup:  Public matrix A over Z_q[x]/(x^256 + 1)        │
   │                                                         │
   │  KeyGen:                                                │
-  │    s ← CBD(σ)            ← small secret vector         │
-  │    e ← CBD(σ)            ← small error vector          │
-  │    t = A·s + e  (mod q)  ← public key                  │
+  │    s ← CBD(σ)            ← small secret vector          │
+  │    e ← CBD(σ)            ← small error vector           │
+  │    t = A·s + e  (mod q)  ← public key                   │
   │    pk = (t, ρ),  sk = s                                 │
   │                                                         │
   │  Encapsulate (sender):                                  │
   │    m  ← random 32-byte message                          │
   │    r  ← CBD noise vectors                               │
-  │    u  = Aᵀ·r + e₁        ← ciphertext component 1      │
-  │    v  = tᵀ·r + e₂ + ⌈q/2⌋·m  ← ciphertext component 2 │
+  │    u  = Aᵀ·r + e₁        ← ciphertext component 1       │
+  │    v  = tᵀ·r + e₂ + ⌈q/2⌋·m  ← ciphertext component 2    │
   │    ct = (u, v)                                          │
   │    ss = KDF(m, H(ct))    ← shared secret                │
   │                                                         │
