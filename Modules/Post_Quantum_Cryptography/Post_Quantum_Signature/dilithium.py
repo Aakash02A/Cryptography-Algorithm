@@ -381,29 +381,29 @@ def show_how_dilithium_works() -> None:
   ┌──────────────────────────────────────────────────────────────┐
   │              Dilithium Architecture (Fiat-Shamir)            │
   ├──────────────────────────────────────────────────────────────┤
-  │  Ring: Rq = Zq[x]/(x^256+1), q = 8380417                    │
+  │  Ring: Rq = Zq[x]/(x^256+1), q = 8380417                     │
   │                                                              │
   │  KeyGen:                                                     │
-  │    A  ← uniform matrix in Rq^{k×l}                          │
-  │    s1 ← small secret vector (coeffs in [-η, η])             │
-  │    s2 ← small secret vector (coeffs in [-η, η])             │
-  │    t  = A·s1 + s2         ← public key                      │
-  │    pk = (ρ, t1),  sk = (ρ, K, tr, s1, s2, t0)              │
+  │    A  ← uniform matrix in Rq^{k×l}                           │
+  │    s1 ← small secret vector (coeffs in [-η, η])              │
+  │    s2 ← small secret vector (coeffs in [-η, η])              │
+  │    t  = A·s1 + s2         ← public key                       │
+  │    pk = (ρ, t1),  sk = (ρ, K, tr, s1, s2, t0)                │
   │                                                              │
   │  Sign (message M):                                           │
-  │    μ  = H(tr || M)        ← message hash                    │
-  │    y  ← uniform in [-γ1+1, γ1]^l  (masking vector)         │
-  │    w  = A·y               ← commitment                      │
-  │    w1 = HighBits(w)       ← rounded commitment              │
-  │    c  = H(μ || w1)        ← challenge hash (weight-τ poly)  │
-  │    z  = y + c·s1          ← response                        │
-  │    Check: ||z||∞ < γ1-β  (reject if too large → retry)     │
-  │    h  = MakeHint(-c·t0, w - c·s2 + c·t0)                   │
-  │    σ  = (c̃, z, h)                                           │
+  │    μ  = H(tr || M)        ← message hash                     │
+  │    y  ← uniform in [-γ1+1, γ1]^l  (masking vector)           │
+  │    w  = A·y               ← commitment                       │
+  │    w1 = HighBits(w)       ← rounded commitment               │
+  │    c  = H(μ || w1)        ← challenge hash (weight-τ poly)   │
+  │    z  = y + c·s1          ← response                         │
+  │    Check: ||z||∞ < γ1-β  (reject if too large → retry)       │
+  │    h  = MakeHint(-c·t0, w - c·s2 + c·t0)                     │
+  │    σ  = (c̃, z, h)                                            │
   │                                                              │
   │  Verify:                                                     │
-  │    w1' = UseHint(h, A·z - c·t1·2^13)                        │
-  │    Accept if c̃ = H(μ || w1') and ||z||∞ < γ1-β             │
+  │    w1' = UseHint(h, A·z - c·t1·2^13)                         │
+  │    Accept if c̃ = H(μ || w1') and ||z||∞ < γ1-β               │
   └──────────────────────────────────────────────────────────────┘
 
   Security basis:

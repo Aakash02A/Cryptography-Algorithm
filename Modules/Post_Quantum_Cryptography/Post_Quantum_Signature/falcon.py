@@ -290,27 +290,27 @@ def show_how_falcon_works() -> None:
   ┌──────────────────────────────────────────────────────────────┐
   │                 Falcon Architecture                          │
   ├──────────────────────────────────────────────────────────────┤
-  │  Ring: Zq[x]/(x^n + 1),  n=512 or 1024,  q=12289           │
+  │  Ring: Zq[x]/(x^n + 1),  n=512 or 1024,  q=12289             │
   │                                                              │
   │  KeyGen (NTRU lattice):                                      │
-  │    f, g  ← short polynomials (discrete Gaussian)            │
-  │    Solve NTRU: f·G - g·F = q  (finding F, G)               │
-  │    h = g·f^{-1} mod q          ← public key                 │
-  │    sk = (f, g, F, G),  pk = h                               │
+  │    f, g  ← short polynomials (discrete Gaussian)             │
+  │    Solve NTRU: f·G - g·F = q  (finding F, G)                 │
+  │    h = g·f^{-1} mod q          ← public key                  │
+  │    sk = (f, g, F, G),  pk = h                                │
   │                                                              │
   │  Sign (message M):                                           │
   │    nonce ← random 40 bytes                                   │
-  │    c = HashToPoint(nonce || M, q, n)  ← random oracle       │
-  │    Sample (s1, s2) from Gaussian D_Λ+c  (lattice coset)     │
+  │    c = HashToPoint(nonce || M, q, n)  ← random oracle        │
+  │    Sample (s1, s2) from Gaussian D_Λ+c  (lattice coset)      │
   │       using Fast Fourier Sampling over NTRU lattice          │
-  │    Check: s1 + h·s2 = c  mod q                              │
-  │    Check: ||(s1, s2)||₂² < β²  (norm bound)                 │
+  │    Check: s1 + h·s2 = c  mod q                               │
+  │    Check: ||(s1, s2)||₂² < β²  (norm bound)                  │
   │    σ = (nonce, s1)                                           │
   │                                                              │
   │  Verify:                                                     │
   │    c  = HashToPoint(nonce || M, q, n)                        │
   │    s2 = c - h·s1  mod q                                      │
-  │    Accept if ||(s1, s2)||₂² < β²                            │
+  │    Accept if ||(s1, s2)||₂² < β²                             │
   └──────────────────────────────────────────────────────────────┘
 
   Why Fast Fourier Sampling?
