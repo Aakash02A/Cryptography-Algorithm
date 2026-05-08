@@ -9,7 +9,7 @@
 ```
 modules/
 └── Advanced_Cryptography/
-    └── Secret Sharing/
+    └── Secret_Sharing/
         └── Shamir's_Secret_Sharing.py    ← Shamir's Secret Sharing (t-of-n threshold)
 ```
 
