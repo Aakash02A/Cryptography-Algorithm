@@ -453,8 +453,8 @@ def ticket_structure_demo() -> None:
   │        crealm      : "EXAMPLE.COM"                               │
   │        cname       : "alice"                                     │
   │        transited   : (realm transit info)                        │
-  │        authtime    : timestamp                                    │
-  │        starttime   : timestamp                                    │
+  │        authtime    : timestamp                                   │
+  │        starttime   : timestamp                                   │
   │        endtime     : timestamp + lifetime                        │
   │        renew-till  : timestamp + max-renew                       │
   │        caddr       : [client IP addresses]                       │
