@@ -253,19 +253,19 @@ def show_how_vigenere_works() -> None:
   │          Vigenère Encryption Example (Key = "KEY")               │
   ├──────────────────────────────────────────────────────────────────┤
   │                                                                  │
-  │  Plaintext : A T T A C K A T D A W N                            │
-  │  Key repeat: K E Y K E Y K E Y K E Y                            │
-  │  Shifts    : 10 4 24 10 4 24 10 4 24 10 4 24                    │
+  │  Plaintext : A T T A C K A T D A W N                             │
+  │  Key repeat: K E Y K E Y K E Y K E Y                             │ 
+  │  Shifts    : 10 4 24 10 4 24 10 4 24 10 4 24                     │
   │                                                                  │
-  │  A(0)  + K(10) = K(10)                                          │
-  │  T(19) + E(4)  = X(23)                                          │
-  │  T(19) + Y(24) = R(17)                                          │
-  │  A(0)  + K(10) = K(10)                                          │
+  │  A(0)  + K(10) = K(10)                                           │
+  │  T(19) + E(4)  = X(23)                                           │
+  │  T(19) + Y(24) = R(17)                                           │
+  │  A(0)  + K(10) = K(10)                                           │
   │  ...                                                             │
-  │  Ciphertext: K X R K G I K X B K A L                            │
+  │  Ciphertext: K X R K G I K X B K A L                             │
   │                                                                  │
-  │  Encryption: Ci = (Pi + Ki) mod 26                              │
-  │  Decryption: Pi = (Ci - Ki) mod 26                              │
+  │  Encryption: Ci = (Pi + Ki) mod 26                               │
+  │  Decryption: Pi = (Ci - Ki) mod 26                               │
   │                                                                  │
   ├──────────────────────────────────────────────────────────────────┤
   │  Cryptanalysis (Kasiski + Friedman):                             │
