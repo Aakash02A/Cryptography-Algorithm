@@ -1,7 +1,5 @@
 import os
 import hashlib
-import secrets
-import struct
 from Crypto.Random import get_random_bytes
 
 

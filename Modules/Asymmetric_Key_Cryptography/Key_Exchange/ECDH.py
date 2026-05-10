@@ -28,7 +28,7 @@ def generate_keypair() -> None:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         ).decode('utf-8')
         
-        print(f"\n  [Success] Keypair generated on SECP256R1 (NIST P-256) curve.")
+        print("\n  [Success] Keypair generated on SECP256R1 (NIST P-256) curve.")
         print(f"  Public Key:\n{pem_public}")
         
         save = input("  Save public key to file? (y/n): ").strip().lower()

@@ -200,13 +200,13 @@ def cryptanalysis_demo() -> None:
     # Step 1: Index of Coincidence
     ic = _index_of_coincidence(text)
     print(f"\n  Step 1 — Index of Coincidence: {ic:.4f}")
-    print(f"  (English ≈ 0.065, Random ≈ 0.038)")
+    print("  (English ≈ 0.065, Random ≈ 0.038)")
     est_key_len = round(0.027 / (ic - 0.038)) if ic > 0.039 else 0
     print(f"  Friedman estimate of key length: {est_key_len}")
 
     # Step 2: Kasiski Examination
     candidates = _kasiski_estimate(text)
-    print(f"\n  Step 2 — Kasiski Examination:")
+    print("\n  Step 2 — Kasiski Examination:")
     print(f"  Likely key lengths (from repeated trigrams): {candidates if candidates else 'Not enough data'}")
 
     # Step 3: Try most likely key length
@@ -218,7 +218,7 @@ def cryptanalysis_demo() -> None:
 
     # Step 4: Attempt decryption
     attempt = _vigenere_process(text, guessed_key, decrypt=True)
-    print(f"\n  Decryption attempt:")
+    print("\n  Decryption attempt:")
     print(f"  {attempt[:80]}{'...' if len(attempt) > 80 else ''}")
 
     save = input("\n  Save analysis to file? (y/n): ").strip().lower()
@@ -240,7 +240,7 @@ def tabula_recta_demo() -> None:
     for i, key_letter in enumerate(_UPPER[:10]):
         row = [(ord(ch) - ord('A') + i) % 26 for ch in _UPPER]
         print(f"  Key {key_letter} │  " + " ".join(_UPPER[r] for r in row))
-    print(f"  ... (showing first 10 rows of 26)")
+    print("  ... (showing first 10 rows of 26)")
 
 
 def show_how_vigenere_works() -> None:

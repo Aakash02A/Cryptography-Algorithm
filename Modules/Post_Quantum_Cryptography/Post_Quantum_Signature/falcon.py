@@ -1,9 +1,7 @@
 import os
 import hashlib
 import secrets
-import math
 import struct
-from fractions import Fraction
 
 
 # ── Falcon Pure Python (Falcon-512, educational) ──────────────────────────────
@@ -166,10 +164,10 @@ def _sample_preimage(h: list[int], c: list[int], sk_bytes: bytes) -> list[int] |
     """Simplified preimage sampling — returns short s1 s.t. s1*h + s2 = c."""
     n = _N
     f = list(struct.unpack_from(f'<{n}h', sk_bytes, 0))
-    g = list(struct.unpack_from(f'<{n}h', sk_bytes, n*2))
+    list(struct.unpack_from(f'<{n}h', sk_bytes, n*2))
 
     fc = _poly_mul_xn1([x % _Q for x in f], c)
-    s2 = [((_Q // 2) - fc[i]) % _Q for i in range(n)]
+    [((_Q // 2) - fc[i]) % _Q for i in range(n)]
     s1 = [(_Q // 2) % _Q] * n
     return s1
 

@@ -28,7 +28,7 @@ def generate_keypair() -> None:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         ).decode('utf-8')
         
-        print(f"\n  [Success] X25519 Keypair generated.")
+        print("\n  [Success] X25519 Keypair generated.")
         print(f"  Public Key (PEM):\n{pem_public}")
         
         save = input("  Save public key to file? (y/n): ").strip().lower()

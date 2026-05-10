@@ -1,8 +1,5 @@
 import os
-import hashlib
 import secrets
-import math
-import struct
 from typing import NamedTuple
 
 
@@ -280,7 +277,7 @@ def generate_keys() -> tuple | None:
     print(f"\n  ✅ Key generation complete")
     print(f"  Secret key: ternary polynomial in {{-1, 0, 1}}^{_N}")
     print(f"  Public key: (p0, p1) — p0 ≈ -(a·s + e) mod Q")
-    print(f"  Relin key : for ciphertext multiplication cleanup")
+    print("  Relin key : for ciphertext multiplication cleanup")
 
     save = input("\n  Save key info to file? (y/n): ").strip().lower()
     if save == "y":
@@ -417,13 +414,13 @@ def circuit_eval_demo() -> None:
     print(f"  Step 1: Enc(a²) = Enc(a) × Enc(a)")
     ct_a2 = _fhe_mul(ct_a, ct_a, rlk)
 
-    print(f"  Step 2: Enc(2b) = 2 × Enc(b)  [plaintext multiplication]")
+    print("  Step 2: Enc(2b) = 2 × Enc(b)  [plaintext multiplication]")
     ct_2b = _fhe_mul_plain(ct_b, _encode_int(2))
 
-    print(f"  Step 3: Enc(3)  [plaintext addition]")
+    print("  Step 3: Enc(3)  [plaintext addition]")
     ct_3  = _bfv_encrypt(pk, _encode_int(3))
 
-    print(f"  Step 4: Enc(a²) + Enc(2b) + Enc(3)")
+    print("  Step 4: Enc(a²) + Enc(2b) + Enc(3)")
     ct_res = _fhe_add(_fhe_add(ct_a2, ct_2b), ct_3)
 
     result = _decode_int(_bfv_decrypt(sk, ct_res))
@@ -525,7 +522,7 @@ def fhe_menu() -> None:
         print(f"  Scheme    : BFV (Fan-Vercauteren)")
         print(f"  Ring      : Z_{_Q}[x]/(x^{_N}+1)")
         print(f"  Plaintext : Z_{_T}")
-        print(f"  Security  : LWE hardness (post-quantum)")
+        print("  Security  : LWE hardness (post-quantum)")
         print(f"  Ops       : Add, Mul, Negate on encrypted integers")
         print()
         print("  1. Generate Keys")

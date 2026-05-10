@@ -1,5 +1,4 @@
 import os
-import struct
 from Crypto.Cipher import Salsa20
 from Crypto.Random import get_random_bytes
 

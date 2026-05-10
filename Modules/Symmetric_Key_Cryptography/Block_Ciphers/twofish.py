@@ -1,5 +1,4 @@
 import os
-import struct
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 

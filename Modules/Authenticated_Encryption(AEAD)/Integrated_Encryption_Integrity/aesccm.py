@@ -131,7 +131,7 @@ def decrypt_message() -> None:
             cipher.update(aad)
 
         plaintext = cipher.decrypt_and_verify(ciphertext, tag)
-        print(f"\n  ✅ Authentication PASSED")
+        print("\n  ✅ Authentication PASSED")
         print(f"  Decrypted Message: {plaintext.decode()}")
     except ValueError:
         print("\n  ❌ Authentication FAILED — ciphertext tampered or wrong key/tag.")

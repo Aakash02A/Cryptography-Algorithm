@@ -329,10 +329,10 @@ def full_ssh_demo() -> None:
 
     print("\n  ── Phase 2: Algorithm Negotiation (KEXINIT) ─────────────────")
     ck  = sess.client_kexinit()
-    sk  = sess.server_kexinit()
+    sess.server_kexinit()
     print(f"  Client KEX proposals : {ck['kex_algorithms']}")
-    print(f"  Chosen cipher        : chacha20-poly1305@openssh.com")
-    print(f"  Chosen host key type : ssh-ed25519")
+    print("  Chosen cipher        : chacha20-poly1305@openssh.com")
+    print("  Chosen host key type : ssh-ed25519")
 
     print("\n  ── Phase 3: Diffie-Hellman Key Exchange ─────────────────────")
     dh_init = sess.client_kexdh_init()
@@ -352,7 +352,7 @@ def full_ssh_demo() -> None:
     print(f"  Session ID           : {k.session_id.hex()[:24]}...")
     print(f"  Client enc key       : {k.enc_c2s.hex()[:24]}...")
     print(f"  Server enc key       : {k.enc_s2c.hex()[:24]}...")
-    print(f"  SSH_MSG_NEWKEYS sent — switching to encrypted transport!")
+    print("  SSH_MSG_NEWKEYS sent — switching to encrypted transport!")
 
     print("\n  ── Phase 4: User Authentication ──────────────────────────────")
     username = input("  Enter username (or press Enter for 'admin'): ").strip() or "admin"
@@ -361,12 +361,12 @@ def full_ssh_demo() -> None:
     if method == "2":
         user_priv, user_pub = _ed25519_keygen_sim()
         auth_msg = sess.userauth_pubkey(username, user_priv, user_pub)
-        print(f"  Auth method  : publickey (ssh-ed25519)")
+        print("  Auth method  : publickey (ssh-ed25519)")
         print(f"  User pub key : {user_pub.hex()[:24]}...")
     else:
         password = input("  Enter password: ").strip() or "secret123"
         auth_msg = sess.userauth_password(username, password)
-        print(f"  Auth method  : password (hashed)")
+        print("  Auth method  : password (hashed)")
 
     auth_ok = sess.server_auth(auth_msg)
     print(f"  Auth result  : {'✅ SUCCESS' if auth_ok else '❌ FAILED'}")
@@ -376,8 +376,8 @@ def full_ssh_demo() -> None:
         return
 
     print("\n  ── Phase 5: Encrypted Channel + Command ──────────────────────")
-    ch_open = sess.open_channel(0)
-    print(f"  Channel opened       : session channel 0")
+    sess.open_channel(0)
+    print("  Channel opened       : session channel 0")
 
     command = input("  Enter command to run (or Enter for 'ls -la'): ").strip() or "ls -la"
     rec     = sess.send_channel_data(0, command)
@@ -403,7 +403,7 @@ def ssh_key_demo() -> None:
     priv, pub = _ed25519_keygen_sim()
     print(f"  Private key : {priv.hex()}")
     print(f"  Public key  : {pub.hex()}")
-    print(f"\n  Public key format (authorized_keys):")
+    print("\n  Public key format (authorized_keys):")
     import base64
     b64_pub = base64.b64encode(pub).decode()
     print(f"  ssh-ed25519 {b64_pub} user@host")

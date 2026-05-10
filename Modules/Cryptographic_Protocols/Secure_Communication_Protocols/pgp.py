@@ -300,11 +300,11 @@ def generate_key_demo() -> _PGPKey | None:
     print(f"  Fingerprint     : {key.fingerprint}")
     print(f"  User ID         : {key.user_id}")
     print(f"  Created         : {time.strftime('%Y-%m-%d', time.localtime(key.created))}")
-    print(f"  Primary key     : RSA-2048 (signing)")
-    print(f"  Subkey          : RSA-2048 (encryption)")
+    print("  Primary key     : RSA-2048 (signing)")
+    print("  Subkey          : RSA-2048 (encryption)")
 
     armored_pub = _pgp_armor(key.pub_key['n'].encode()[:64], "PUBLIC KEY BLOCK")
-    print(f"\n  Public Key (ASCII armor, excerpt):")
+    print("\n  Public Key (ASCII armor, excerpt):")
     print(f"  {armored_pub.splitlines()[0]}")
     print(f"  {armored_pub.splitlines()[1][:40]}...")
     print(f"  {armored_pub.splitlines()[-1]}")
@@ -338,10 +338,10 @@ def encrypt_decrypt_demo() -> None:
     enc = _pgp_encrypt(message, recipient)
 
     armored = _pgp_armor(enc.encrypted_data[:48], "MESSAGE")
-    print(f"\n  Encrypted message (excerpt):")
+    print("\n  Encrypted message (excerpt):")
     for line in armored.splitlines()[:4]:
         print(f"  {line}")
-    print(f"  ...")
+    print("  ...")
 
     print(f"\n  Decrypting with {recipient.user_id}'s private key...")
     decrypted = _pgp_decrypt(enc, recipient)
@@ -404,15 +404,15 @@ def web_of_trust_demo() -> None:
 
     wot.display()
 
-    print(f"\n  Trust path to Dave:")
+    print("\n  Trust path to Dave:")
     path = wot.get_trust_path(dave.key_id)
     print(f"    Certified by: {path}")
-    print(f"\n  PGP Web of Trust:")
-    print(f"    Alice (ultimate) → certifies → Bob (full)")
-    print(f"    Bob (full)       → certifies → Carol (marginal)")
-    print(f"    Carol (marginal) → certifies → Dave (unknown)")
-    print(f"\n  Dave is not trusted because the chain includes marginal trust levels.")
-    print(f"  GPG rule: needs 3 marginal OR 1 full trust to be considered valid.")
+    print("\n  PGP Web of Trust:")
+    print("    Alice (ultimate) → certifies → Bob (full)")
+    print("    Bob (full)       → certifies → Carol (marginal)")
+    print("    Carol (marginal) → certifies → Dave (unknown)")
+    print("\n  Dave is not trusted because the chain includes marginal trust levels.")
+    print("  GPG rule: needs 3 marginal OR 1 full trust to be considered valid.")
 
 
 def show_how_pgp_works() -> None:

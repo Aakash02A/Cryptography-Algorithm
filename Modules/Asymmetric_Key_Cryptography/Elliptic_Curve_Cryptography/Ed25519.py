@@ -35,7 +35,7 @@ def generate_keypair() -> None:
             format=serialization.PublicFormat.Raw
         ).hex()
         
-        print(f"\n  [Success] Ed25519 Keypair generated.")
+        print("\n  [Success] Ed25519 Keypair generated.")
         print(f"  Public Key (32-byte raw hex): {pub_hex}")
         
         save = input("  Save keys to file? (y/n): ").strip().lower()
@@ -68,7 +68,7 @@ def sign_message() -> None:
         
         print(f"\n  Signature (64-byte hex) : {sig_hex}")
         print(f"  Public Key (32-byte hex): {pub_hex}")
-        print(f"\n  *Keep this Public Key and Signature to verify later!")
+        print("\n  *Keep this Public Key and Signature to verify later!")
         
         save = input("\n  Save signature output to file? (y/n): ").strip().lower()
         if save == "y":

@@ -2,7 +2,6 @@ import os
 import hashlib
 import hmac
 import secrets
-import struct
 import time
 from typing import NamedTuple
 
@@ -285,7 +284,7 @@ class _KDC:
             'client_name':  client_name,
             'client_realm': self.realm,
             'timestamp':    int(time.time()),
-            'seq_number':   seq := secrets.randbelow(2**31),
+            'seq_number':   secrets.randbelow(2**31),
             'subkey':       secrets.token_bytes(32).hex(),
         })
         return {

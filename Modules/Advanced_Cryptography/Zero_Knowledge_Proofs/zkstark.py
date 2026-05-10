@@ -2,7 +2,6 @@ import os
 import hashlib
 import secrets
 import math
-from typing import Any
 
 
 # ── zk-STARKs Pure Python (FRI + AIR, educational) ───────────────────────────
@@ -131,7 +130,7 @@ def _air_to_polynomial(trace: list[_Fp]) -> list[_Fp]:
     """Interpolate trace as a polynomial over evaluation domain."""
     n     = len(trace)
     omega = _get_nth_root(n) if n <= (1 << 32) else _Fp(3)
-    domain = [omega ** i for i in range(n)]
+    [omega ** i for i in range(n)]
     # Simple Lagrange for small traces
     return trace   # treat as evaluations directly for demo
 
@@ -413,7 +412,7 @@ def generate_proof() -> None:
     print(f"  FRI queries           : {len(proof.fri_proof.queries)}")
     print(f"  Public inputs         : n={proof.public_inputs['n']}, z={proof.public_inputs['z']}")
     print(f"\n  No trusted setup required! ✅")
-    print(f"  Transparent randomness via Fiat-Shamir + SHA-256")
+    print("  Transparent randomness via Fiat-Shamir + SHA-256")
 
     save = input("\n  Save proof to file? (y/n): ").strip().lower()
     if save == "y":
@@ -444,7 +443,7 @@ def verify_proof() -> None:
 
     if _stark_verify(proof):
         print(f"\n  ✅ PROOF ACCEPTED")
-        print(f"  Verifier is convinced: Prover knows valid Fibonacci sequence")
+        print("  Verifier is convinced: Prover knows valid Fibonacci sequence")
         print(f"  of length {n} ending at z = {proof.public_inputs['z']}")
         print(f"  Verifier learned nothing about a0 or a1.")
     else:
@@ -473,7 +472,7 @@ def fri_demo() -> None:
     print(f"  Commitments : {[r.hex()[:16] for r in fri_proof.commitments]}")
     print(f"  Final poly  : {[v.v for v in fri_proof.final_poly[:4]]}...")
     print(f"\n  FRI verifies degree bound WITHOUT revealing polynomial coefficients.")
-    print(f"  This is the core building block of zk-STARKs.")
+    print("  This is the core building block of zk-STARKs.")
 
 
 def air_explainer() -> None:

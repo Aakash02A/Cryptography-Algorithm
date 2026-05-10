@@ -1,7 +1,6 @@
 import os
 import secrets
 import hashlib
-from Crypto.Random import get_random_bytes
 
 
 # ── Classic McEliece Pure Python (mceliece348864, educational) ───────────────
@@ -260,8 +259,8 @@ def generate_keypair() -> None:
         print(f"  Public Key  (hex): {pk_bytes.hex()}")
         print(f"  Secret Key  (hex): {sk_bytes.hex()}")
         print(f"  Full mceliece348864 Public Key size : 261,120 bytes")
-        print(f"  Full mceliece348864 Secret Key size : 6,452 bytes")
-        print(f"  Full mceliece348864 Ciphertext size : 128 bytes")
+        print("  Full mceliece348864 Secret Key size : 6,452 bytes")
+        print("  Full mceliece348864 Ciphertext size : 128 bytes")
         save = input("\n  Save keys to file? (y/n): ").strip().lower()
         if save == "y":
             _save_output(

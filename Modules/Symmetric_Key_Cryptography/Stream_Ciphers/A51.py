@@ -160,7 +160,7 @@ def generate_key() -> None:
     print("  Real-time decryption with rainbow tables is well-documented.\n")
     key = get_random_bytes(8)
     print(f"  Key (hex)  : {key.hex()}")
-    print(f"  Frame (22-bit): Used during encryption (acts as nonce)")
+    print("  Frame (22-bit): Used during encryption (acts as nonce)")
     save = input("\n  Save key to file? (y/n): ").strip().lower()
     if save == "y":
         _save_output(f"A5/1 Key (64-bit):\n{key.hex()}\n", "a51_key.txt")

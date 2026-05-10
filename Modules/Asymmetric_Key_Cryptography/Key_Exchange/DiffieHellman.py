@@ -26,7 +26,7 @@ def generate_parameters() -> None:
             format=serialization.ParameterFormat.PKCS3
         ).decode('utf-8')
         
-        print(f"\n  [Success] Parameters generated.")
+        print("\n  [Success] Parameters generated.")
         print(f"  {pem_params.strip()[:100]}...\n  (truncated for display)")
         
         save = input("\n  Save parameters to file? (y/n): ").strip().lower()

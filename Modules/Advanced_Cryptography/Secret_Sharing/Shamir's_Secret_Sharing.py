@@ -1,7 +1,6 @@
 import os
 import secrets
-import hashlib
-from typing import NamedTuple, List, Tuple
+from typing import List, Tuple
 
 
 # ── Shamir's Secret Sharing Pure Python — Core & Demos ────────────────────────

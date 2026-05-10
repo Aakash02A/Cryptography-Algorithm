@@ -1,13 +1,9 @@
 import os
-import hashlib
-import secrets
 from cryptography.hazmat.primitives.asymmetric.ed25519 import (
     Ed25519PrivateKey,
-    Ed25519PublicKey,
 )
 from cryptography.hazmat.primitives.asymmetric.ed448 import (
     Ed448PrivateKey,
-    Ed448PublicKey,
 )
 from cryptography.hazmat.primitives import serialization
 from cryptography.exceptions import InvalidSignature
@@ -233,8 +229,8 @@ def verify_signature() -> None:
         print(f"  The message was signed by the holder of the matching private key.")
 
     except InvalidSignature:
-        print(f"\n  Result   : ❌ Signature is INVALID")
-        print(f"  The signature does not match the message or public key.")
+        print("\n  Result   : ❌ Signature is INVALID")
+        print("  The signature does not match the message or public key.")
     except ValueError as e:
         print(f"  [Error] Invalid input: {e}")
     except Exception as e:
@@ -304,8 +300,8 @@ def verify_file() -> None:
         print(f"  The file has not been modified since it was signed.")
 
     except InvalidSignature:
-        print(f"\n  Result   : ❌ File signature is INVALID")
-        print(f"  The file may have been modified or the wrong key was used.")
+        print("\n  Result   : ❌ File signature is INVALID")
+        print("  The file may have been modified or the wrong key was used.")
     except Exception as e:
         print(f"  [Error] File verification failed: {e}")
 
@@ -367,18 +363,18 @@ def eddsa_vs_ecdsa() -> None:
     print("\n--- EdDSA vs ECDSA Comparison ---")
     print("""
   ┌──────────────────────┬──────────────────────┬──────────────────────┐
-  │ Property             │ EdDSA (Ed25519)       │ ECDSA (P-256)        │
+  │ Property             │ EdDSA (Ed25519)      │ ECDSA (P-256)        │
   ├──────────────────────┼──────────────────────┼──────────────────────┤
-  │ Deterministic        │ ✅ Yes                │ ❌ No (random nonce)  │
-  │ Nonce reuse risk     │ ✅ None               │ ❌ Key exposure risk  │
-  │ Timing attacks       │ ✅ Constant-time      │ ⚠ Depends on impl   │
+  │ Deterministic        │ ✅ Yes               │ ❌ No (random nonce)│
+  │ Nonce reuse risk     │ ✅ None              │ ❌ Key exposure risk│
+  │ Timing attacks       │ ✅ Constant-time     │ ⚠ Depends on impl   │
   │ Signature size       │ 64 bytes (Ed25519)   │ ~71 bytes (DER)      │
   │ Public key size      │ 32 bytes             │ 64 bytes (uncompressed)│
-  │ Signing speed        │ ✅ Faster             │ Slower               │
-  │ Verification speed   │ ✅ Faster (batch)     │ Slower               │
+  │ Signing speed        │ ✅ Faster            │ Slower               │
+  │ Verification speed   │ ✅ Faster (batch)    │ Slower               │
   │ Hash algorithm       │ Internal (SHA-512)   │ External (SHA-256)   │
   │ Security level       │ 128-bit (Ed25519)    │ 128-bit (P-256)      │
-  │ Standard             │ RFC 8032 / FIPS 186-5│ ANSI X9.62 / FIPS   │
+  │ Standard             │ RFC 8032 / FIPS 186-5│ ANSI X9.62 / FIPS    │
   │ Used in              │ SSH, TLS, Signal     │ TLS, JOSE, Bitcoin   │
   └──────────────────────┴──────────────────────┴──────────────────────┘
 
@@ -403,23 +399,23 @@ def eddsa_vs_ecdsa() -> None:
 def ed25519_vs_ed448() -> None:
     print("\n--- Ed25519 vs Ed448 ---")
     print("""
-  ┌──────────────────────┬──────────────────────┬──────────────────────┐
-  │ Property             │ Ed25519               │ Ed448 (Goldilocks)   │
-  ├──────────────────────┼──────────────────────┼──────────────────────┤
-  │ Curve                │ Curve25519            │ Curve448             │
-  │ Field size           │ 2²⁵⁵ - 19            │ 2⁴⁴⁸ - 2²²⁴ - 1    │
-  │ Security level       │ ~128-bit              │ ~224-bit             │
-  │ Private key size     │ 32 bytes              │ 57 bytes             │
-  │ Public key size      │ 32 bytes              │ 57 bytes             │
-  │ Signature size       │ 64 bytes              │ 114 bytes            │
-  │ Hash function        │ SHA-512               │ SHAKE256             │
-  │ Signing speed        │ Faster                │ Slower (~5×)         │
-  │ Use case             │ General purpose       │ Long-term / high-sec │
-  │ RFC                  │ RFC 8032              │ RFC 8032             │
-  ├──────────────────────┼──────────────────────┼──────────────────────┤
-  │ Recommended for      │ TLS, SSH, everyday    │ Certificate roots,   │
-  │                      │ signing, code sig     │ PQC hybrid schemes   │
-  └──────────────────────┴──────────────────────┴──────────────────────┘
+  ┌──────────────────────┬───────────────────────┬───────────────────────┐
+  │ Property             │ Ed25519               │ Ed448 (Goldilocks)    │
+  ├──────────────────────┼───────────────────────┼───────────────────────┤
+  │ Curve                │ Curve25519            │ Curve448              │
+  │ Field size           │ 2²⁵⁵ - 19             │ 2⁴⁴⁸ - 2²²⁴ - 1       │
+  │ Security level       │ ~128-bit              │ ~224-bit              │
+  │ Private key size     │ 32 bytes              │ 57 bytes              │
+  │ Public key size      │ 32 bytes              │ 57 bytes              │
+  │ Signature size       │ 64 bytes              │ 114 bytes             │
+  │ Hash function        │ SHA-512               │ SHAKE256              │
+  │ Signing speed        │ Faster                │ Slower (~5×)          │
+  │ Use case             │ General purpose       │ Long-term / high-sec  │
+  │ RFC                  │ RFC 8032              │ RFC 8032              │
+  ├──────────────────────┼───────────────────────┼───────────────────────┤
+  │ Recommended for      │ TLS, SSH, everyday    │ Certificate roots,    │
+  │                      │ signing, code sig     │ PQC hybrid schemes    │
+  └──────────────────────┴───────────────────────┴───────────────────────┘
 
   Both use twisted Edwards curves:
     Ed25519: -x² + y² = 1 - (121665/121666)·x²y²  over GF(2²⁵⁵-19)
@@ -442,7 +438,7 @@ def show_how_eddsa_works() -> None:
   ├──────────────────────────────────────────────────────────────────┤
   │                                                                  │
   │  Curve: Twisted Edwards  -x² + y² = 1 + d·x²y²                   │
-  │  Field: GF(2²⁵⁵ - 19)   ← 255-bit prime                         X │
+  │  Field: GF(2²⁵⁵ - 19)   ← 255-bit prime                         X│
   │  Base point B (generator), prime order ℓ                         │
   │                                                                  │
   │  Key Generation:                                                 │

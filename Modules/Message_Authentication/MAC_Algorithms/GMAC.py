@@ -32,7 +32,7 @@ def generate_key() -> None:
         key = secrets.token_bytes(32)
         key_hex = key.hex()
         
-        print(f"\n  [Success] 256-bit AES Key Generated.")
+        print("\n  [Success] 256-bit AES Key Generated.")
         print(f"  Key (hex): {key_hex}")
         
         save = input("\n  Save key to file? (y/n): ").strip().lower()

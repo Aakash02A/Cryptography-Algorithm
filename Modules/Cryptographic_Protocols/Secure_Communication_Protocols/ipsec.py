@@ -3,7 +3,6 @@ import hashlib
 import hmac
 import secrets
 import struct
-import time
 from typing import NamedTuple
 
 

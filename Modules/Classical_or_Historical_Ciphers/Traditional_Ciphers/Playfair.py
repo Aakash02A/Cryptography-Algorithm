@@ -193,7 +193,7 @@ def decrypt_message() -> None:
 
     print(f"\n  Ciphertext : {' '.join(cleaned[i:i+2] for i in range(0,len(cleaned),2))}")
     print(f"  Plaintext  : {' '.join(plaintext[i:i+2] for i in range(0,len(plaintext),2))}")
-    print(f"  Note: Remove padding 'X' characters manually if present.")
+    print("  Note: Remove padding 'X' characters manually if present.")
 
 
 def show_how_playfair_works() -> None:

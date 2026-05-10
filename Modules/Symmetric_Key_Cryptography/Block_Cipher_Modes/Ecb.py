@@ -74,7 +74,7 @@ def encrypt_message() -> None:
         hex_cipher = ciphertext.hex()
 
         print(f"\n  Ciphertext (hex): {hex_cipher}")
-        print(f"  Note: No IV used — same plaintext always gives same ciphertext.")
+        print("  Note: No IV used — same plaintext always gives same ciphertext.")
 
         save = input("\n  Save output to file? (y/n): ").strip().lower()
         if save == "y":
@@ -119,8 +119,8 @@ def show_ecb_weakness() -> None:
     ciphertext = cipher.encrypt(repeated)
     block1 = ciphertext[:16].hex()
     block2 = ciphertext[16:].hex()
-    print(f"  Plaintext Block 1 : YELLOW SUBMARINE")
-    print(f"  Plaintext Block 2 : YELLOW SUBMARINE")
+    print("  Plaintext Block 1 : YELLOW SUBMARINE")
+    print("  Plaintext Block 2 : YELLOW SUBMARINE")
     print(f"  Ciphertext Block 1: {block1}")
     print(f"  Ciphertext Block 2: {block2}")
     print(f"\n  Identical? {'✅ YES — This is the ECB vulnerability!' if block1 == block2 else '❌ No'}")

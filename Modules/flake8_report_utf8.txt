@@ -1,0 +1,205 @@
+﻿.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:2:1: F401 'hashlib' imported but unused
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:4:1: F401 'math' imported but unused
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:5:1: F401 'struct' imported but unused
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:280:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:282:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:283:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:344:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:366:23: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:367:23: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:380:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:384:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:385:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:412:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:417:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:420:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:423:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:426:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:434:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:525:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:528:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\fhe.py:529:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\phe.py:3:1: F401 'hashlib' imported but unused
+.\Advanced_Cryptography\Homomorphic_Encryption\phe.py:235:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\phe.py:238:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\phe.py:267:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\phe.py:328:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Homomorphic_Encryption\phe.py:367:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secret_Sharing\Shamir's_Secret_Sharing.py:3:1: F401 'hashlib' imported but unused
+.\Advanced_Cryptography\Secret_Sharing\Shamir's_Secret_Sharing.py:4:1: F401 'typing.NamedTuple' imported but unused
+.\Advanced_Cryptography\Secure_Computation\ot.py:5:1: F401 'typing.NamedTuple' imported but unused
+.\Advanced_Cryptography\Secure_Computation\ot.py:358:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\ot.py:368:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\ot.py:418:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\ot.py:448:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\ot.py:473:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\ot.py:478:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:4:1: F401 'math' imported but unused
+.\Advanced_Cryptography\Secure_Computation\smpc.py:472:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:486:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:515:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:523:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:555:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:585:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:586:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:587:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:622:19: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:624:23: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:625:23: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Secure_Computation\smpc.py:638:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:77:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:78:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:83:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:88:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:89:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:93:5: F841 local variable 'lhs' is assigned to but never used
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:94:5: F841 local variable 'rhs' is assigned to but never used
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:98:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:99:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:108:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:109:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:110:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:133:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:174:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkp.py:227:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:2:1: F401 'hashlib' imported but unused
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:86:5: F841 local variable 'n' is assigned to but never used
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:228:5: F841 local variable 'tau' is assigned to but never used
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:305:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:306:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:336:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:340:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:345:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:346:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zksnark.py:382:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:5:1: F401 'typing.Any' imported but unused
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:134:5: F841 local variable 'domain' is assigned to but never used
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:405:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:409:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:415:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:416:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:446:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:447:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:449:15: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:464:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:471:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:475:11: F541 f-string is missing placeholders
+.\Advanced_Cryptography\Zero_Knowledge_Proofs\zkstark.py:476:11: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:2:1: F401 'hashlib' imported but unused
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:3:1: F401 'secrets' imported but unused
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:4:1: F401 'cryptography.hazmat.primitives.asymmetric.ed25519.Ed25519PublicKey' imported but unused
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:8:1: F401 'cryptography.hazmat.primitives.asymmetric.ed448.Ed448PublicKey' imported but unused
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:200:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:201:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:202:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:232:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:233:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:236:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:237:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:303:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:304:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:307:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:308:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:344:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:347:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\EdDSA.py:350:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\RSA_Signature.py:2:1: F401 'hashlib' imported but unused
+.\Asymmetric_Key_Cryptography\Digital_Signature_Algorithm\Schnorr.py:4:1: F401 'Crypto.Random.get_random_bytes' imported but unused
+.\Asymmetric_Key_Cryptography\Elliptic_Curve_Cryptography\ECDH.py:37:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Elliptic_Curve_Cryptography\ECDSA.py:38:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Elliptic_Curve_Cryptography\ECDSA.py:75:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Elliptic_Curve_Cryptography\Ed25519.py:38:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Elliptic_Curve_Cryptography\Ed25519.py:71:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Key_Exchange\DiffieHellman.py:29:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Key_Exchange\ECDH.py:31:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Key_Exchange\MQV.py:42:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Key_Exchange\X25519.py:31:15: F541 f-string is missing placeholders
+.\Asymmetric_Key_Cryptography\Public_Key_Encryption\rsa.py:5:1: F401 'cryptography.exceptions.InvalidSignature' imported but unused
+.\Authenticated_Encryption(AEAD)\Integrated_Encryption_Integrity\aesccm.py:134:15: F541 f-string is missing placeholders
+.\Authenticated_Encryption(AEAD)\Integrated_Encryption_Integrity\aesgcm.py:128:15: F541 f-string is missing placeholders
+.\Authenticated_Encryption(AEAD)\Integrated_Encryption_Integrity\chacha20poly1305.py:131:15: F541 f-string is missing placeholders
+.\Authenticated_Encryption(AEAD)\Integrated_Encryption_Integrity\ocb.py:132:15: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Enigma.py:195:27: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Enigma.py:233:11: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Enigma.py:292:9: F841 local variable 'pos_before' is assigned to but never used
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Hill.py:3:1: F401 'string' imported but unused
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Hill.py:216:11: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Playfair.py:196:11: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Vigenere.py:203:11: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Vigenere.py:209:11: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Vigenere.py:221:11: F541 f-string is missing placeholders
+.\Classical_or_Historical_Ciphers\Traditional_Ciphers\Vigenere.py:243:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ipsec.py:6:1: F401 'time' imported but unused
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ipsec.py:293:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ipsec.py:304:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ipsec.py:317:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ipsec.py:374:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\kerberos.py:288:34: E999 SyntaxError: invalid syntax
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:23:5: F841 local variable 'pub_seed' is assigned to but never used
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:303:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:304:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:307:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:341:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:344:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:407:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:410:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:411:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:412:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:413:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:414:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\pgp.py:415:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:332:5: F841 local variable 'sk' is assigned to but never used
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:334:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:335:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:355:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:364:15: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:369:15: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:379:5: F841 local variable 'ch_open' is assigned to but never used
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:380:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\ssh.py:406:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\tls.py:6:1: F401 'time' imported but unused
+.\Cryptographic_Protocols\Secure_Communication_Protocols\tls.py:431:11: F541 f-string is missing placeholders
+.\Cryptographic_Protocols\Secure_Communication_Protocols\tls.py:475:11: F541 f-string is missing placeholders
+.\Message_Authentication\MAC_Algorithms\CMAC.py:36:15: F541 f-string is missing placeholders
+.\Message_Authentication\MAC_Algorithms\GMAC.py:35:15: F541 f-string is missing placeholders
+.\Message_Authentication\MAC_Algorithms\HMAC.py:35:15: F541 f-string is missing placeholders
+.\Message_Authentication\MAC_Algorithms\Poly1305.py:35:15: F541 f-string is missing placeholders
+.\Message_Authentication\MAC_Algorithms\Poly1305.py:37:15: F541 f-string is missing placeholders
+.\Message_Authentication\MAC_Algorithms\Poly1305.py:105:15: F541 f-string is missing placeholders
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\kyber.py:3:1: F401 'secrets' imported but unused
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\kyber.py:4:1: F401 'struct' imported but unused
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\kyber.py:60:5: F841 local variable 'f_inv' is assigned to but never used
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\mceliece.py:4:1: F401 'Crypto.Random.get_random_bytes' imported but unused
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\mceliece.py:115:8: F841 local variable 'n' is assigned to but never used
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\mceliece.py:262:15: F541 f-string is missing placeholders
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\mceliece.py:263:15: F541 f-string is missing placeholders
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\mceliece.py:264:15: F541 f-string is missing placeholders
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\ntru.py:3:1: F401 'hashlib' imported but unused
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\ntru.py:4:1: F401 'Crypto.Random.get_random_bytes' imported but unused
+.\Post_Quantum_Cryptography\Key_Encapsulation_or_Encryption\ntru.py:130:9: F841 local variable 'fp_inv_check' is assigned to but never used
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\dilithium.py:62:5: F841 local variable 'MONT' is assigned to but never used
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\falcon.py:4:1: F401 'math' imported but unused
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\falcon.py:6:1: F401 'fractions.Fraction' imported but unused
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\falcon.py:169:5: F841 local variable 'g' is assigned to but never used
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\falcon.py:172:5: F841 local variable 's2' is assigned to but never used
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\sphincsplus.py:242:9: F841 local variable 'indices' is assigned to but never used
+.\Post_Quantum_Cryptography\Post_Quantum_Signature\sphincsplus.py:246:9: F841 local variable 'expected_root' is assigned to but never used
+.\Symmetric_Key_Cryptography\Block_Cipher_Modes\Ccm.py:129:15: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Cipher_Modes\Ctr.py:2:1: F401 'struct' imported but unused
+.\Symmetric_Key_Cryptography\Block_Cipher_Modes\Ecb.py:77:15: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Cipher_Modes\Ecb.py:122:11: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Cipher_Modes\Ecb.py:123:11: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Cipher_Modes\Gcm.py:127:15: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Ciphers\aes.py:2:1: F401 'hashlib' imported but unused
+.\Symmetric_Key_Cryptography\Block_Ciphers\idea.py:39:9: F841 local variable 'prev' is assigned to but never used
+.\Symmetric_Key_Cryptography\Block_Ciphers\rc5.py:135:11: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Ciphers\rc6.py:146:11: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Block_Ciphers\serpent.py:6:5: F401 'serpent as _serpent_lib' imported but unused
+.\Symmetric_Key_Cryptography\Block_Ciphers\serpent.py:48:9: F841 local variable 'sb' is assigned to but never used
+.\Symmetric_Key_Cryptography\Block_Ciphers\serpent.py:50:9: F841 local variable 'sk' is assigned to but never used
+.\Symmetric_Key_Cryptography\Block_Ciphers\serpent.py:53:13: F841 local variable 'nibble' is assigned to but never used
+.\Symmetric_Key_Cryptography\Block_Ciphers\twofish.py:2:1: F401 'struct' imported but unused
+.\Symmetric_Key_Cryptography\Stream_Ciphers\A51.py:163:11: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Stream_Ciphers\Chacha20.py:191:15: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Stream_Ciphers\Rc4.py:95:15: F541 f-string is missing placeholders
+.\Symmetric_Key_Cryptography\Stream_Ciphers\Salsa20.py:2:1: F401 'struct' imported but unused

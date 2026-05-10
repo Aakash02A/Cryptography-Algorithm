@@ -192,7 +192,7 @@ def _get_enigma_settings() -> _EnigmaMachine | None:
             print("  [Error] Enter exactly 3 letters (A–Z).")
             return None
 
-        reflector = input(f"  Reflector (UKW-B / UKW-C, default UKW-B): ").strip().upper() or 'UKW-B'
+        reflector = input("  Reflector (UKW-B / UKW-C, default UKW-B): ").strip().upper() or 'UKW-B'
         if reflector not in _REFLECTORS:
             reflector = 'UKW-B'
 
@@ -230,7 +230,7 @@ def encrypt_message() -> None:
     print(f"\n  Start Position : {indicator}")
     print(f"  Plaintext      : {text.upper()}")
     print(f"  Ciphertext     : {ciphertext}")
-    print(f"\n  To decrypt: use IDENTICAL settings and enter the ciphertext.")
+    print("\n  To decrypt: use IDENTICAL settings and enter the ciphertext.")
 
     save = input("\n  Save output to file? (y/n): ").strip().lower()
     if save == "y":
@@ -289,7 +289,7 @@ def rotor_step_demo() -> None:
     print(f"  {'Press':<6} {'L M R':<10} {'Encoded'}")
     print(f"  {'─'*5}  {'─'*8}  {'─'*8}")
     for i in range(1, 11):
-        pos_before = enigma.get_indicator()
+        enigma.get_indicator()
         enc = enigma.encode_letter('A')
         pos_after  = enigma.get_indicator()
         print(f"  {i:<6} {pos_after:<10} {enc}")

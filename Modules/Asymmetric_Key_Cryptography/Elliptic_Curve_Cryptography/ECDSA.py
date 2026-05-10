@@ -35,7 +35,7 @@ def generate_keypair() -> None:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         ).decode('utf-8')
         
-        print(f"\n  [Success] ECDSA Keypair generated on SECP256R1 (NIST P-256).")
+        print("\n  [Success] ECDSA Keypair generated on SECP256R1 (NIST P-256).")
         print(f"  Public Key:\n{pem_public}")
         
         save = input("  Save keys to file? (y/n): ").strip().lower()
@@ -72,7 +72,7 @@ def sign_message() -> None:
         
         print(f"\n  Signature (hex): {sig_hex}")
         print(f"  Public Key (hex uncompressed): {pub_hex}")
-        print(f"\n  *Keep this Public Key and Signature to verify later!")
+        print("\n  *Keep this Public Key and Signature to verify later!")
         
         save = input("\n  Save signature output to file? (y/n): ").strip().lower()
         if save == "y":

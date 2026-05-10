@@ -1,5 +1,4 @@
 import os
-import hashlib
 import secrets
 from typing import NamedTuple
 
@@ -83,7 +82,7 @@ def _Fr_poly_div(f: list[_Fr], g: list[_Fr]) -> tuple[list[_Fr], list[_Fr]]:
 
 def _lagrange_interpolation(points: list[tuple[_Fr, _Fr]]) -> list[_Fr]:
     """Interpolate polynomial through given (x, y) points."""
-    n = len(points)
+    len(points)
     result = [_Fr(0)]
     for i, (xi, yi) in enumerate(points):
         num   = [_Fr(1)]
@@ -225,7 +224,7 @@ def _groth16_prove(x: int, y: int, crs: dict) -> _SNARKProof:
     A_polys, B_polys, C_polys, t_poly, _ = _r1cs_to_qap()
     h = _compute_h_poly(w, A_polys, B_polys, C_polys, t_poly)
 
-    tau       = crs['tau']
+    crs['tau']
     alpha     = crs['alpha']
     beta      = crs['beta']
     tau_pows  = crs['tau_pows']
@@ -303,7 +302,7 @@ def trusted_setup() -> dict:
     crs = _trusted_setup_simulate(t_poly)
     print(f"  τ   (toxic waste, MUST destroy): {hex(crs['tau'].v)[:18]}...")
     print(f"  CRS generated with alpha, beta, powers of τ.")
-    print(f"\n  Circuit: x² + y = z")
+    print("\n  Circuit: x² + y = z")
     print(f"  Constraints (R1CS): {_N_GATES} gates, {_N_VARS} variables")
     return crs
 
@@ -343,7 +342,7 @@ def generate_proof(crs: dict | None = None) -> None:
     print(f"  C (G1 element) : {hex(proof.C)[:18]}...")
     print(f"  Public input z : {proof.public_input}")
     print(f"\n  Proof size: ~128 bytes  (3 curve points)")
-    print(f"  Verification: O(1) — constant time regardless of circuit size")
+    print("  Verification: O(1) — constant time regardless of circuit size")
 
     save = input("\n  Save proof to file? (y/n): ").strip().lower()
     if save == "y":

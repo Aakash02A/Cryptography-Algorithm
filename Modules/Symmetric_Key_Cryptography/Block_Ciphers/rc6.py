@@ -143,7 +143,7 @@ def generate_key() -> None:
     key = get_random_bytes(16)
     hex_key = key.hex()
     print(f"  Key (hex): {hex_key}")
-    print(f"  Variant  : RC6-32/20/16 (word=32bit, rounds=20, keylen=16)")
+    print("  Variant  : RC6-32/20/16 (word=32bit, rounds=20, keylen=16)")
     save = input("\n  Save key to file? (y/n): ").strip().lower()
     if save == "y":
         _save_output(f"RC6 Key (128-bit):\n{hex_key}\n", "rc6_key.txt")

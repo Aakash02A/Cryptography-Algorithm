@@ -74,19 +74,19 @@ def interactive_zkp_demo() -> None:
     # Round 1 — Prover commits
     k = secrets.randbelow(_Q - 1) + 1        # random nonce
     R = pow(_G, k, _P)                        # commitment R = g^k mod p
-    print(f"  [Step 1 — Prover commits]")
-    print(f"  Prover picks random k, sends R = g^k mod p")
+    print("  [Step 1 — Prover commits]")
+    print("  Prover picks random k, sends R = g^k mod p")
     print(f"  R = {hex(R)[:18]}...\n")
 
     # Round 2 — Verifier sends challenge
     e = secrets.randbelow(_Q)
-    print(f"  [Step 2 — Verifier challenges]")
+    print("  [Step 2 — Verifier challenges]")
     print(f"  Verifier sends random challenge e = {hex(e)[:18]}...\n")
 
     # Round 3 — Prover responds
     s = (k - e * x) % _Q                     # response s = k - e*x mod q
-    print(f"  [Step 3 — Prover responds]")
-    print(f"  Prover sends s = (k - e·x) mod q")
+    print("  [Step 3 — Prover responds]")
+    print("  Prover sends s = (k - e·x) mod q")
     print(f"  s = {hex(s)[:18]}...\n")
 
     # Verification
@@ -95,8 +95,8 @@ def interactive_zkp_demo() -> None:
     # Correct: g^s · y^e = g^(k-ex) · g^(ex) = g^k = R
     rhs_correct = (pow(_G, s, _P) * pow(y, e, _P)) % _P
 
-    print(f"  [Verification]")
-    print(f"  Check: g^s · y^e ≡ R  (mod p)")
+    print("  [Verification]")
+    print("  Check: g^s · y^e ≡ R  (mod p)")
     print(f"  g^s · y^e = {hex(rhs_correct)[:18]}...")
     print(f"  R         = {hex(R)[:18]}...")
 
@@ -105,9 +105,9 @@ def interactive_zkp_demo() -> None:
     else:
         print("\n  ❌ PROOF REJECTED")
 
-    print(f"\n  Zero-Knowledge: Verifier learned nothing about x.")
-    print(f"  Soundness: Forging a valid proof without knowing x requires")
-    print(f"             solving the discrete logarithm problem.")
+    print("\n  Zero-Knowledge: Verifier learned nothing about x.")
+    print("  Soundness: Forging a valid proof without knowing x requires")
+    print("             solving the discrete logarithm problem.")
 
     save = input("\n  Save proof transcript to file? (y/n): ").strip().lower()
     if save == "y":
@@ -130,7 +130,7 @@ def setup_prover() -> None:
     x, y = _setup_witness()
     print(f"  Secret Witness  x (hex): {hex(x)}")
     print(f"  Public Statement y (hex): {hex(y)}")
-    print(f"\n  Store x securely. Share y as your public statement.")
+    print("\n  Store x securely. Share y as your public statement.")
     save = input("\n  Save to file? (y/n): ").strip().lower()
     if save == "y":
         _save_output(
@@ -171,7 +171,7 @@ def nizk_prove() -> None:
     # Response
     s = (k - e * x) % _Q
 
-    print(f"\n  Proof generated:")
+    print("\n  Proof generated:")
     print(f"  R (commitment) : {hex(R)[:18]}...")
     print(f"  e (challenge)  : {hex(e)[:18]}...  ← derived via hash, not random")
     print(f"  s (response)   : {hex(s)[:18]}...")
@@ -224,7 +224,7 @@ def nizk_verify() -> None:
 
     if lhs == R:
         print("\n  ✅ PROOF ACCEPTED — Prover knows x without revealing it!")
-        print(f"  g^s · y^e ≡ R (mod p)  ✓")
+        print("  g^s · y^e ≡ R (mod p)  ✓")
     else:
         print("\n  ❌ PROOF REJECTED — equation does not hold.")
 

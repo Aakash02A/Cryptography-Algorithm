@@ -32,9 +32,9 @@ def generate_key() -> None:
         key = secrets.token_bytes(32)
         key_hex = key.hex()
         
-        print(f"\n  [Success] 256-bit Poly1305 Key Generated.")
+        print("\n  [Success] 256-bit Poly1305 Key Generated.")
         print(f"  Key (hex): {key_hex}")
-        print(f"  *WARNING: Poly1305 is a ONE-TIME authenticator. Never reuse this key!")
+        print("  *WARNING: Poly1305 is a ONE-TIME authenticator. Never reuse this key!")
         
         save = input("\n  Save key to file? (y/n): ").strip().lower()
         if save == "y":
@@ -102,7 +102,7 @@ def verify_mac() -> None:
         return
         
     if len(provided_mac) != 16:
-        print(f"  [Error] Poly1305 tags must be exactly 16 bytes.")
+        print("  [Error] Poly1305 tags must be exactly 16 bytes.")
         return
     
     try:

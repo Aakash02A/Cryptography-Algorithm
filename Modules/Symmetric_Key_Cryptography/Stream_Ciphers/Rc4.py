@@ -92,7 +92,7 @@ def encrypt_message() -> None:
         hex_cipher = ciphertext.hex()
 
         print(f"\n  Ciphertext (hex): {hex_cipher}")
-        print(f"  Note: RC4 has no IV — same key + same plaintext = same ciphertext.")
+        print("  Note: RC4 has no IV — same key + same plaintext = same ciphertext.")
 
         save = input("\n  Save output to file? (y/n): ").strip().lower()
         if save == "y":

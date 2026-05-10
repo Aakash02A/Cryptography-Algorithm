@@ -1,7 +1,6 @@
 import os
 import hashlib
 import secrets
-import math
 from typing import NamedTuple
 
 
@@ -583,8 +582,8 @@ def yao_garbled_circuit_demo() -> None:
 
     print(f"\n  [Alice] Garbling {gate_type} gate...")
     print(f"  [Alice] Sending garbled table + her label to Bob")
-    print(f"  [Alice] Bob obtains his label via Oblivious Transfer")
-    print(f"  [Bob]   Evaluating garbled circuit...")
+    print("  [Alice] Bob obtains his label via Oblivious Transfer")
+    print("  [Bob]   Evaluating garbled circuit...")
 
     result = _yao_2pc(gate_type, alice_bit, bob_bit)
 
@@ -622,7 +621,7 @@ def yao_circuit_demo() -> None:
         g = input(f"    Gate type (AND/OR/XOR/NAND): ").strip().upper()
         if g not in gate_choices: g = 'AND'
         a = int(input(f"    Alice's bit: ").strip()) & 1
-        b = int(input(f"    Bob's bit  : ").strip()) & 1
+        b = int(input("    Bob's bit  : ").strip()) & 1
         gates.append(g); alice_bits.append(a); bob_bits.append(b)
 
     results = _yao_circuit(alice_bits, bob_bits, gates)

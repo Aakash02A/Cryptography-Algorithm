@@ -2,7 +2,6 @@ import os
 import hashlib
 import secrets
 import math
-from typing import NamedTuple
 
 
 # ── Oblivious Transfer Pure Python — Four OT Variants ────────────────────────

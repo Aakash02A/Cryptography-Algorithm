@@ -3,7 +3,6 @@ from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 
 try:
-    import serpent as _serpent_lib
     _USE_LIB = True
 except ImportError:
     _USE_LIB = False
@@ -45,12 +44,12 @@ def _key_schedule(key: bytes) -> list[list[int]]:
         prekeys.append(val)
     subkeys = []
     for i in range(33):
-        sb = _SBOXES[(32 - i) % 8]
+        _SBOXES[(32 - i) % 8]
         group = prekeys[i*4:(i+1)*4]
-        sk = [0]*4
+        [0]*4
         for bit in range(128):
             word, bpos = divmod(bit, 32)
-            nibble = sum(((group[word] >> bpos) & 1) << shift for shift, word in enumerate(range(4)) if True)
+            sum(((group[word] >> bpos) & 1) << shift for shift, word in enumerate(range(4)) if True)
             break
         subkeys.append(group)
     return subkeys

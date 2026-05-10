@@ -39,7 +39,7 @@ def generate_keypairs() -> None:
             format=serialization.PublicFormat.SubjectPublicKeyInfo
         ).decode('utf-8')
         
-        print(f"\n  [Success] Static and Ephemeral Keypairs generated on SECP256R1.")
+        print("\n  [Success] Static and Ephemeral Keypairs generated on SECP256R1.")
         print(f"  Static Public Key:\n{pem_static_pub}")
         print(f"  Ephemeral Public Key:\n{pem_eph_pub}")
         

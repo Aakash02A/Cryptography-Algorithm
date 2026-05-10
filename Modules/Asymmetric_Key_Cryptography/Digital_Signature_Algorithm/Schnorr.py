@@ -1,7 +1,6 @@
 import os
 import hashlib
 import secrets
-from Crypto.Random import get_random_bytes
 
 
 # ── Schnorr Signature — Pure Python over secp256k1-like group ────────────────

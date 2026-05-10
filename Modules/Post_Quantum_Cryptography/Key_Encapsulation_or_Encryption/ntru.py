@@ -1,7 +1,5 @@
 import os
 import secrets
-import hashlib
-from Crypto.Random import get_random_bytes
 
 
 # ── NTRU Pure Python (NTRU-HPS-2048-677, educational) ────────────────────────
@@ -127,7 +125,7 @@ def _ntru_keygen() -> tuple[bytes, bytes]:
 
         fq = _poly_inv_modq(fq_inv2, [c % _Q for c in f])
         fp = [(c % _P) for c in f]
-        fp_inv_check = _poly_mul([c % _P for c in fq_inv2 if True], fp, _P)
+        _poly_mul([c % _P for c in fq_inv2 if True], fp, _P)
         # verify: f * fq^{-1} ≡ 1 mod 2 (approximate check)
 
         g = _random_ternary(_N, _DG)
