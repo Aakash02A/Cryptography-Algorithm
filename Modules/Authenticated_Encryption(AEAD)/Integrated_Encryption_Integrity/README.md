@@ -10,7 +10,7 @@
 ```
 modules/
 └── Authenticated_Encryption(AEAD)/
-    └──Integrated_Encryption__Integrity/
+    └──Integrated_Encryption_Integrity/
         ├── aesgcm.py
         ├── aesccm.py
         ├── chacha20poly1305.py

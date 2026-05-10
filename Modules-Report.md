@@ -37,7 +37,7 @@ Notable files:
 
 Notes:
 
-- [Modules/Advanced_Cryptography/README.md](Modules/Advanced_Cryptography/README.md) exists but is empty.
+ - Top-level [Modules/Advanced_Cryptography](Modules/Advanced_Cryptography) README is not present; several subfolders include their own README files (e.g. Homomorphic_Encryption, Secret_Sharing, Secure_Computation, Zero_Knowledge_Proofs).
 
 ### 2. Asymmetric_Key_Cryptography
 
@@ -83,7 +83,7 @@ Notable files:
 
 Notes:
 
-- The README filename is malformed: [README .md](Modules/Authenticated_Encryption(AEAD)/Integrated_Encryption__Integrity/README%20.md).
+ - The AEAD subtree contains an `Integrated_Encryption__Integrity` folder with a correctly named `README.md` and the expected implementations (`aesgcm.py`, `aesccm.py`, `chacha20poly1305.py`, `ocb.py`).
 
 ### 4. Classical_or_Historical_Ciphers
 
@@ -162,8 +162,7 @@ Notable files:
 
 Notes:
 
-- The KEM folder has a filename issue: [mceliece.py](Modules/Post_Quantum_Cryptography/Key_Encapsulation_or_Encryption/mceliece.py).
-- The signature folder does not currently have a README.
+ - The KEM folder contains `mceliece.py` (filename is correct). The Post-Quantum signature subtree includes a `README.md` alongside `dilithium.py`, `falcon.py`, and `sphincsplus.py`.
 
 ### 9. Symmentric Key Cryptography
 
@@ -209,19 +208,17 @@ Well-documented areas:
 - Post-quantum KEMs
 
 Gaps:
-
-- [Modules/Advanced_Cryptography/README.md](Modules/Advanced_Cryptography/README.md) is empty.
-- [Modules/Post_Quantum_Cryptography/Post_Quantum_Signature](Modules/Post_Quantum_Cryptography/Post_Quantum_Signature) has no README.
-- [README .md](Modules/Authenticated_Encryption(AEAD)/Integrated_Encryption__Integrity/README%20.md) is present but improperly named.
+ 
+ - Missing top-level README for `Advanced_Cryptography` — subfolders contain READMEs but the top-level category README is absent.
+ - Inconsistent naming in the symmetric subtree: the directory is misspelled (`Symmentric`), and folder names use mixed case and spaces which hurts tooling and import hygiene.
+ - Duplicate algorithm implementations across subfolders (notably `ECDH` and `ECDSA` present under both `Key_Exchange` and `Elliptic_Curve_Cryptography`) which may confuse users.
 
 ## Structural Issues
 
-1. Directory typo in `Symmentric Key Cryptography`.
-2. Malformed README filename in the AEAD subtree.
-3. Double-dot filename in the McEliece module.
-4. Duplicate algorithm coverage in the asymmetric area, especially ECDH and ECDSA.
-5. Empty top-level README for Advanced Cryptography.
-6. Missing README for Post-Quantum Signatures.
+1. Directory typo in `Symmentric Key Cryptography` (should be `Symmetric Key Cryptography`).
+2. Inconsistent naming style in the Symmetric subtree (spaces and mixed case in folder names).
+3. Duplicate algorithm coverage in the asymmetric area (ECDH and ECDSA appear in more than one location).
+4. Missing top-level `Advanced_Cryptography` README while several subfolders have their own READMEs.
 
 ## Coverage Summary
 
