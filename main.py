@@ -138,84 +138,84 @@ def menu_symmetric() -> None:
         c = _get_choice()
         # ── Block Ciphers
         if c == "1":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.aes",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.aes",
                  "aes_menu", "AES")
         elif c == "2":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.des",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.des",
                  "des_menu", "DES")
         elif c == "3":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.des3",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.des3",
                  "des3_menu", "3DES")
         elif c == "4":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.blowfish",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.blowfish",
                  "blowfish_menu", "Blowfish")
         elif c == "5":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.twofish",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.twofish",
                  "twofish_menu", "Twofish")
         elif c == "6":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.idea",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.idea",
                  "idea_menu", "IDEA")
         elif c == "7":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.camellia",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.camellia",
                  "camellia_menu", "Camellia")
         elif c == "8":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.serpent",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.serpent",
                  "serpent_menu", "Serpent")
         elif c == "9":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.rc5",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.rc5",
                  "rc5_menu", "RC5")
         elif c == "10":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.rc6",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.rc6",
                  "rc6_menu", "RC6")
         elif c == "11":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.magma",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.magma",
                  "magma_menu", "Magma")
         elif c == "12":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Ciphers.kuznyechik",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Ciphers.kuznyechik",
                  "kuznyechik_menu", "Kuznyechik")
         # ── Block Cipher Modes
         elif c == "13":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ecb",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ecb",
                  "ecb_menu", "ECB")
         elif c == "14":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.cbc",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.cbc",
                  "cbc_menu", "CBC")
         elif c == "15":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.cfb",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.cfb",
                  "cfb_menu", "CFB")
         elif c == "16":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ofb",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ofb",
                  "ofb_menu", "OFB")
         elif c == "17":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ctr",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ctr",
                  "ctr_menu", "CTR")
         elif c == "18":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.gcm",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.gcm",
                  "gcm_menu", "GCM")
         elif c == "19":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ccm",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ccm",
                  "ccm_menu", "CCM")
         elif c == "20":
-            _run("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.xts",
+            _run("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.xts",
                  "xts_menu", "XTS")
         # ── Stream Ciphers
         elif c == "21":
-            _run("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.rc4",
+            _run("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.rc4",
                  "rc4_menu", "RC4")
         elif c == "22":
-            _run("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.salsa20",
+            _run("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.salsa20",
                  "salsa20_menu", "Salsa20")
         elif c == "23":
-            _run("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.chacha20",
+            _run("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.chacha20",
                  "chacha20_menu", "ChaCha20")
         elif c == "24":
-            _run("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.hc128",
+            _run("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.hc128",
                  "hc128_menu", "HC-128")
         elif c == "25":
-            _run("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.rabbit",
+            _run("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.rabbit",
                  "rabbit_menu", "Rabbit")
         elif c == "26":
-            _run("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.a51",
+            _run("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.a51",
                  "a51_menu", "A5/1")
         elif c == "0":
             break
@@ -417,16 +417,16 @@ def menu_aead() -> None:
 
         c = _get_choice()
         if c == "1":
-            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.aesgcm",
+            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.aesgcm",
                  "aesgcm_menu", "AES-GCM")
         elif c == "2":
-            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.aesccm",
+            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.aesccm",
                  "aesccm_menu", "AES-CCM")
         elif c == "3":
-            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.chacha20poly1305",
+            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.chacha20poly1305",
                  "chacha20poly1305_menu", "ChaCha20-Poly1305")
         elif c == "4":
-            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.ocb",
+            _run("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.ocb",
                  "ocb_menu", "OCB")
         elif c == "0":
             break
@@ -523,7 +523,7 @@ def menu_advanced() -> None:
                  "ot_menu", "Oblivious Transfer")
         elif c == "8":
             _run("Modules.Advanced_Cryptography.Secret_Sharing.Shamir_s_Secret_Sharing",
-                 "shamir_menu", "Shamir's Secret Sharing")
+                 "sss_menu", "Shamir's Secret Sharing")
         elif c == "0":
             break
         else:
@@ -612,34 +612,34 @@ def menu_protocols() -> None:
 
 _ALL_MODULES = [
     # Symmetric — Block Ciphers
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.aes",         "aes_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.des",         "des_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.des3",        "des3_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.blowfish",    "blowfish_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.twofish",     "twofish_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.idea",        "idea_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.camellia",    "camellia_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.serpent",     "serpent_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.rc5",         "rc5_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.rc6",         "rc6_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.magma",       "magma_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Ciphers.kuznyechik",  "kuznyechik_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.aes",         "aes_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.des",         "des_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.des3",        "des3_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.blowfish",    "blowfish_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.twofish",     "twofish_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.idea",        "idea_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.camellia",    "camellia_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.serpent",     "serpent_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.rc5",         "rc5_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.rc6",         "rc6_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.magma",       "magma_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.kuznyechik",  "kuznyechik_menu"),
     # Symmetric — Block Cipher Modes
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ecb",    "ecb_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.cbc",    "cbc_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.cfb",    "cfb_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ofb",    "ofb_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ctr",    "ctr_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.gcm",    "gcm_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.ccm",    "ccm_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Block_Cipher_Modes.xts",    "xts_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ecb",    "ecb_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.cbc",    "cbc_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.cfb",    "cfb_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ofb",    "ofb_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ctr",    "ctr_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.gcm",    "gcm_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ccm",    "ccm_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.xts",    "xts_menu"),
     # Symmetric — Stream Ciphers
-    ("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.rc4",        "rc4_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.salsa20",    "salsa20_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.chacha20",   "chacha20_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.hc128",      "hc128_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.rabbit",     "rabbit_menu"),
-    ("Modules.Symmentric_Key_Cryptography.Stream_Ciphers.a51",        "a51_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.rc4",        "rc4_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.salsa20",    "salsa20_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.chacha20",   "chacha20_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.hc128",      "hc128_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.rabbit",     "rabbit_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.a51",        "a51_menu"),
     # Asymmetric — Public Key Encryption
     ("Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.rsa",       "rsa_menu"),
     ("Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.ElGamal",   "elgamal_menu"),
@@ -672,10 +672,10 @@ _ALL_MODULES = [
     ("Modules.Message_Authentication.MAC_Algorithms.GMAC",      "gmac_menu"),
     ("Modules.Message_Authentication.MAC_Algorithms.Poly1305",  "poly1305_menu"),
     # AEAD
-    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.aesgcm",          "aesgcm_menu"),
-    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.aesccm",          "aesccm_menu"),
-    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.chacha20poly1305","chacha20poly1305_menu"),
-    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption__Integrity.ocb",             "ocb_menu"),
+    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.aesgcm",          "aesgcm_menu"),
+    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.aesccm",          "aesccm_menu"),
+    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.chacha20poly1305","chacha20poly1305_menu"),
+    ("Modules.Authenticated_Encryption_AEAD.Integrated_Encryption_Integrity.ocb",             "ocb_menu"),
     # Post-Quantum
     ("Modules.Post_Quantum_Cryptography.Key_Encapsulation_or_Encryption.kyber",     "kyber_menu"),
     ("Modules.Post_Quantum_Cryptography.Key_Encapsulation_or_Encryption.ntru",      "ntru_menu"),
@@ -691,7 +691,7 @@ _ALL_MODULES = [
     ("Modules.Advanced_Cryptography.Homomorphic_Encryption.phe",                       "phe_menu"),
     ("Modules.Advanced_Cryptography.Secure_Computation.smpc",                          "smpc_menu"),
     ("Modules.Advanced_Cryptography.Secure_Computation.ot",                            "ot_menu"),
-    ("Modules.Advanced_Cryptography.Secret_Sharing.Shamir_s_Secret_Sharing",           "shamir_menu"),
+    ("Modules.Advanced_Cryptography.Secret_Sharing.Shamir_s_Secret_Sharing",           "sss_menu"),
     # Classical
     ("Modules.Classical_or_Historical_Ciphers.Traditional_Ciphers.Caesar",    "caesar_menu"),
     ("Modules.Classical_or_Historical_Ciphers.Traditional_Ciphers.Vigenere",  "vigenere_menu"),
@@ -759,10 +759,10 @@ def show_setup_guide() -> None:
   import os
   folders = [
       'Modules',
-      'Modules/Symmentric_Key_Cryptography',
-      'Modules/Symmentric_Key_Cryptography/Block_Ciphers',
-      'Modules/Symmentric_Key_Cryptography/Block_Cipher_Modes',
-      'Modules/Symmentric_Key_Cryptography/Stream_Ciphers',
+      'Modules/Symmetric_Key_Cryptography',
+      'Modules/Symmetric_Key_Cryptography/Block_Ciphers',
+      'Modules/Symmetric_Key_Cryptography/Block_Cipher_Modes',
+      'Modules/Symmetric_Key_Cryptography/Stream_Ciphers',
       'Modules/Asymmetric_Key_Cryptography',
       'Modules/Asymmetric_Key_Cryptography/Digital_Signature_Algorithm',
       'Modules/Asymmetric_Key_Cryptography/Elliptic_Curve_Cryptography',
@@ -773,7 +773,7 @@ def show_setup_guide() -> None:
       'Modules/Message_Authentication',
       'Modules/Message_Authentication/MAC_Algorithms',
       'Modules/Authenticated_Encryption_AEAD',
-      'Modules/Authenticated_Encryption_AEAD/Integrated_Encryption__Integrity',
+      'Modules/Authenticated_Encryption_AEAD/Integrated_Encryption_Integrity',
       'Modules/Post_Quantum_Cryptography',
       'Modules/Post_Quantum_Cryptography/Key_Encapsulation_or_Encryption',
       'Modules/Post_Quantum_Cryptography/Post_Quantum_Signature',
