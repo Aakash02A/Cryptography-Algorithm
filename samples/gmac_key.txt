@@ -1,0 +1,2 @@
+GMAC Secret Key (AES-256, hex):
+10b6f2cae6a5e1290a5e6aaf0f5617c617cf356527c593d57c96dab35bfdf197

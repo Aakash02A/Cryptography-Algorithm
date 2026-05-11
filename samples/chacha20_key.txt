@@ -1,0 +1,4 @@
+ChaCha20 Key (256-bit):
+cae7f2e135a8b28a74f5676b1cc73bee2e7595fc6034044e21ca94a7e2aac185
+Sample Nonce (96-bit):
+064fced8f848b2dda18aa95c

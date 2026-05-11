@@ -1,0 +1,4 @@
+ChaCha20-Poly1305 Key (256-bit):
+a86035ef2cef1b01c42ff1ce1df2a7a47077cae8fc3cbe5ad86dd5c529f0532a
+Sample Nonce:
+37285d1885b20012c8f62632

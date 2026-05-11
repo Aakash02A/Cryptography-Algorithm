@@ -120,7 +120,7 @@ def sign_message() -> None:
         s = (k - e * priv) % _Q
 
         hex_R = R.to_bytes(256, 'big').hex()
-        hex_s = s.to_bytes(32, 'big').hex()
+        hex_s = s.to_bytes(256, 'big').hex()
         hex_e = e.to_bytes(32, 'big').hex()
 
         print(f"\n  R (commitment) hex: {hex_R}")

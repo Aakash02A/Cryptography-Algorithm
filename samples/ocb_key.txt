@@ -1,0 +1,4 @@
+AES-OCB Key (256-bit):
+799199ee83bb0ff8a27ed47adbcbb39d5f413a5ffa5302a709984ba201b92b0a
+Sample Nonce:
+a893b655429aefb44f1025abe99404

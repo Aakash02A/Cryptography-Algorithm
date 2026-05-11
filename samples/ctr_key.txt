@@ -1,0 +1,4 @@
+AES-CTR Key (256-bit):
+d2e704d4ef91f951cb5c02d5f4ad2c2598a266a588965bf402d729c1c84efb15
+Nonce:
+5baaf54dfaf32f4a9118ac780ccd8e4f

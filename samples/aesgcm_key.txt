@@ -1,0 +1,4 @@
+AES-GCM Key (256-bit):
+31c1e5bdae12312cebe81c09f449051f8ed4aedf810496620c8592834f8e7362
+Sample Nonce:
+ad2ac777ad4877eea73b513b

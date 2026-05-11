@@ -302,7 +302,7 @@ def sss_math() -> None:
 
 # ── menu ──────────────────────────────────────────────────────────────────────
 
-def sss_menu() -> None:
+def shamir_menu() -> None:
     while True:
         print("\n--- Shamir's Secret Sharing (SSS) ---")
         print("  Field    : 512-bit safe prime")
@@ -333,4 +333,4 @@ def sss_menu() -> None:
 
 
 if __name__ == "__main__":
-    sss_menu()
+    shamir_menu()

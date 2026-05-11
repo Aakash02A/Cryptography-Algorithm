@@ -1,0 +1,2 @@
+3DES Key (168-bit):
+51a157c2a1b9a72529dcc783c8f10ea7d69e2c5b9d2f2fad

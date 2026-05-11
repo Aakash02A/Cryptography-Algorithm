@@ -1,0 +1,2 @@
+AES-CCM Key (256-bit):
+989a630bcd50be6f0f0ea578a36a8a9fcf1291d1a482799d1b6ed8c05ab6bf50

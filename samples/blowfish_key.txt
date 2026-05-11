@@ -1,0 +1,2 @@
+Blowfish Key (128-bit):
+b2c98f6b83608594517a019cd473e6e1

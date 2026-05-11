@@ -1,0 +1,4 @@
+Salsa20 Key (256-bit):
+7c9d6549d87eb4b4f59312fa66735be0e260ed7bdf80950bc9bebfdac3b8425d
+Sample Nonce (64-bit):
+cac7264921a7814a

@@ -1,0 +1,4 @@
+AES-CCM Key (256-bit):
+a65a6b571f4b0188c9d2ae3adbcee661e9d621320366e6c7db3f3a0d1738d0e2
+Sample Nonce:
+d7552d71926fdf945900e6

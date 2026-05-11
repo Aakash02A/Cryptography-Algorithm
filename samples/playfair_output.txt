@@ -1,0 +1,5 @@
+Playfair Encryption
+Keyword   : TEST_MESSAGE
+Plaintext : 00112233445566778899aabbccddeeff
+Prepared  : AXABBCCDDEEFFX
+Ciphertext: SZEFCDDFBMABCZ

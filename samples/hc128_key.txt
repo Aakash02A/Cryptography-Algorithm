@@ -1,0 +1,4 @@
+HC-128 Key (128-bit):
+57831c8463c7deac64fc02de6a56e89e
+Sample IV (128-bit):
+fc6d293362d416771c2e41d354e1562e

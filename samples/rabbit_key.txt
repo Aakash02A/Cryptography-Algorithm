@@ -1,0 +1,4 @@
+Rabbit Key (128-bit):
+16735880f78706be21fabaf2a78ee156
+Sample IV (64-bit):
+7b39b5aaf727a2cf

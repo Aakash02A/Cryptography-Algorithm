@@ -1,0 +1,2 @@
+CMAC Secret Key (AES-256, hex):
+1efb9d65b8a1b786709ffaa1424f015ed9dea16a8c983794ee827b5dbfabc099

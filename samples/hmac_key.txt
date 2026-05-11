@@ -1,0 +1,2 @@
+HMAC Secret Key (hex):
+eccd20fa2aef9d68f29b7b1aed7fbece8d9d2a29b153b0459cc83054158e6ac5

@@ -1,0 +1,4 @@
+IKEv2 Session
+SPI_I=6019f9358fbfdb10
+SPI_R=3124ff66ceaa1820
+Child SA Out SPI=e289b4b4
