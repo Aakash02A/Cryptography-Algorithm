@@ -195,10 +195,10 @@ def decrypt_message() -> None:
             )
         )
         print(f"\n  Decrypted Message: {cleartext.decode('utf-8')}")
-    except ValueError as e:
-        print(f"  [Error] Invalid base64 or ciphertext structure: {e}")
     except UnicodeDecodeError:
         print("  [Error] Output bytes are not valid UTF-8. Corrupted payload or wrong key?")
+    except ValueError as e:
+        print(f"  [Error] Invalid base64 or ciphertext structure: {e}")
     except Exception as e:
         print(f"  [Error] Decryption failed: {e}")
 

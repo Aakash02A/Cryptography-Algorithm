@@ -112,10 +112,10 @@ def decrypt_message() -> None:
         cipher = ChaCha20.new(key=key, nonce=nonce)
         plaintext = cipher.decrypt(ciphertext)
         print(f"\n  Decrypted Message: {plaintext.decode()}")
-    except ValueError as e:
-        print(f"  [Error] Invalid input: {e}")
     except UnicodeDecodeError:
         print("  [Error] Decrypted bytes are not valid UTF-8. Wrong key or nonce?")
+    except ValueError as e:
+        print(f"  [Error] Invalid input: {e}")
     except Exception as e:
         print(f"  [Error] Decryption failed: {e}")
 

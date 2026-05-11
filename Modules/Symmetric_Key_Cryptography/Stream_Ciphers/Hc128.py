@@ -211,10 +211,10 @@ def decrypt_message() -> None:
         ciphertext = bytes.fromhex(hex_cipher)
         plaintext = _hc128_crypt(key, iv, ciphertext)
         print(f"\n  Decrypted Message: {plaintext.decode()}")
-    except ValueError as e:
-        print(f"  [Error] Invalid input: {e}")
     except UnicodeDecodeError:
         print("  [Error] Decrypted bytes are not valid UTF-8. Wrong key or IV?")
+    except ValueError as e:
+        print(f"  [Error] Invalid input: {e}")
     except Exception as e:
         print(f"  [Error] Decryption failed: {e}")
 

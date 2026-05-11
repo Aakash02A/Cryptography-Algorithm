@@ -95,7 +95,7 @@ def _poly_mod_gf(a: list[int], m: list[int]) -> list[int]:
 def _gen_goppa_poly(t: int, rng) -> list[int]:
     """Generate random irreducible Goppa polynomial of degree t over GF(2^m)."""
     while True:
-        coeffs = [rng.randbelow(_GFQ) for _ in range(t)] + [1]
+        coeffs = [rng.randrange(_GFQ) for _ in range(t)] + [1]
         # Check irreducibility: g has no roots in GF(2^m)
         has_root = any(_poly_eval(coeffs, a) == 0 for a in range(1, min(100, _GFQ)))
         if not has_root:
@@ -195,12 +195,12 @@ class _SimpleMcEliece:
 
     @classmethod
     def keygen(cls, rng):
-        g = [rng.randbelow(cls.GFQ) for _ in range(cls.T)] + [1]
+        g = [rng.randrange(cls.GFQ) for _ in range(cls.T)] + [1]
         L = list(range(1, cls.GFQ + 1))[:cls.N]
         sk = {'g': g, 'L': L}
 
         # Build parity check (simplified: random systematic generator matrix)
-        pk_matrix = [[rng.randbelow(2) for _ in range(cls.N)] for _ in range(cls.K)]
+        pk_matrix = [[rng.randrange(2) for _ in range(cls.N)] for _ in range(cls.K)]
         pk = {'G': pk_matrix, 'n': cls.N, 'k': cls.K, 't': cls.T}
         return pk, sk
 
@@ -280,7 +280,7 @@ def encapsulate_key() -> None:
         rng = secrets.SystemRandom()
         pk, sk = mc.keygen(rng)
 
-        m_bits = [rng.randbelow(2) for _ in range(mc.K)]
+        m_bits = [rng.randrange(2) for _ in range(mc.K)]
         ct     = mc.encrypt(pk, m_bits)
         ss     = hashlib.sha256(bytes([int(b) for b in m_bits])).digest()
 
@@ -310,7 +310,7 @@ def decapsulate_key() -> None:
         rng = secrets.SystemRandom()
         pk, sk = mc.keygen(rng)
 
-        m_bits = [rng.randbelow(2) for _ in range(mc.K)]
+        m_bits = [rng.randrange(2) for _ in range(mc.K)]
         ct     = mc.encrypt(pk, m_bits)
         m_dec  = mc.decrypt(sk, ct)
 
@@ -377,7 +377,7 @@ def show_how_mceliece_works() -> None:
     Secret Key  : 6,452 bytes
     Ciphertext  : 128 bytes      ← smallest ciphertext of all finalists
     Shared Secret: 32 bytes
-
+ 
   Key properties:
     ✅ 45+ years of cryptanalysis — most battle-tested PQC scheme
     ✅ Ultra-conservative: no known sub-exponential quantum attacks

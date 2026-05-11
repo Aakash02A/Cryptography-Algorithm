@@ -110,8 +110,8 @@ class _SSHSession:
     def __init__(self) -> None:
         self.client_version   = "SSH-2.0-OpenSSH_9.0"
         self.server_version   = "SSH-2.0-OpenSSH_9.0p1"
-        self.client_kexinit   = b""
-        self.server_kexinit   = b""
+        self.client_kexinit_payload   = b""
+        self.server_kexinit_payload   = b""
         self.dh_priv_c        = b""
         self.dh_pub_c         = b""
         self.dh_priv_s        = b""
@@ -134,7 +134,7 @@ class _SSHSession:
 
     def client_kexinit(self) -> dict:
         cookie           = secrets.token_bytes(16)
-        self.client_kexinit = cookie
+        self.client_kexinit_payload = cookie
         return {
             'msg_type': 'SSH_MSG_KEXINIT',
             'cookie':   cookie.hex(),
@@ -149,7 +149,7 @@ class _SSHSession:
 
     def server_kexinit(self) -> dict:
         cookie           = secrets.token_bytes(16)
-        self.server_kexinit = cookie
+        self.server_kexinit_payload = cookie
         self.host_priv, self.host_pub = _ed25519_keygen_sim()
         return {
             'msg_type': 'SSH_MSG_KEXINIT',
@@ -176,7 +176,7 @@ class _SSHSession:
 
         # Exchange hash H = hash(V_C || V_S || I_C || I_S || K_S || e || f || K)
         h_input = (self.client_version.encode() + self.server_version.encode()
-                   + self.client_kexinit + self.server_kexinit
+                   + self.client_kexinit_payload + self.server_kexinit_payload
                    + self.host_pub + self.dh_pub_c + self.dh_pub_s
                    + self.shared_k)
         self.exchange_hash = hashlib.sha256(h_input).digest()
@@ -200,7 +200,7 @@ class _SSHSession:
         self.shared_k  = _dh_shared(self.dh_priv_c, self.dh_pub_s)
 
         h_input = (self.client_version.encode() + self.server_version.encode()
-                   + self.client_kexinit + self.server_kexinit
+                   + self.client_kexinit_payload + self.server_kexinit_payload
                    + host_pub + self.dh_pub_c + self.dh_pub_s
                    + self.shared_k)
         self.exchange_hash = hashlib.sha256(h_input).digest()
