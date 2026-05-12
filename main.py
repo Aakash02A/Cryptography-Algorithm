@@ -96,6 +96,34 @@ def _get_choice(prompt: str = "\n  Select option: ") -> str:
         return "0"
 
 
+def _show_main_help() -> None:
+    print("\n  Command shortcuts:")
+    print("    1-9      Open a category")
+    print("    D        Run diagnostics")
+    print("    S        Setup guide")
+    print("    H / HELP Show this help")
+    print("    CLS      Clear the screen")
+    print("    Q / EXIT / QUIT  Leave the program")
+
+
+def _resolve_main_choice(choice: str) -> str:
+    value = choice.strip().upper()
+    aliases = {
+        "HELP": "H",
+        "H": "H",
+        "CLS": "CLS",
+        "CLEAR": "CLS",
+        "DIAG": "D",
+        "DIAGNOSTICS": "D",
+        "SETUP": "S",
+        "MENU": "M",
+        "MAIN": "M",
+        "QUIT": "Q",
+        "EXIT": "Q",
+    }
+    return aliases.get(value, value)
+
+
 # ═══════════════════════════════════════════════════════════════════
 # CATEGORY 1 — Symmetric Key Cryptography
 # ═══════════════════════════════════════════════════════════════════
@@ -872,7 +900,9 @@ def main() -> None:
         print(f"  AEAD: 4  │  PQC: 6  │  Advanced: 8  │  "
               f"Classical: 5  │  Protocols: 5")
 
-        c = _get_choice("\n  Choice: ").upper()
+        print("\n  Type a number or command (H for help).")
+
+        c = _resolve_main_choice(_get_choice("\n  CMD> "))
 
         if c == "1":
             menu_symmetric()
@@ -896,11 +926,16 @@ def main() -> None:
             run_diagnostics()
         elif c == "S":
             show_setup_guide()
+        elif c == "H":
+            _show_main_help()
+            input("\n  Press Enter to continue...")
+        elif c == "CLS":
+            continue
         elif c in ("Q", "EXIT", "QUIT"):
             print("\n  Goodbye! 🔐\n")
             break
         else:
-            print("  [Error] Invalid choice. Enter 1–9, D, S, or Q.")
+            print("  [Error] Invalid choice. Enter 1–9, D, S, H, CLS, or Q.")
             import time; time.sleep(0.8)
 
 
