@@ -124,6 +124,96 @@ def _resolve_main_choice(choice: str) -> str:
     return aliases.get(value, value)
 
 
+def _show_main_menu() -> None:
+    _banner()
+
+    print("  Select a cryptography category:\n")
+    print("  ┌──────────────────────────────────────────────────────────┐")
+    _menu_item("  1 │", "Symmetric Key Cryptography",
+               "26 algorithms")
+    _menu_item("  2 │", "Asymmetric Key Cryptography",
+               "16 algorithms")
+    _menu_item("  3 │", "Cryptographic Hash Functions",
+               "9 algorithms")
+    _menu_item("  4 │", "Message Authentication (MAC)",
+               "4 algorithms")
+    _menu_item("  5 │", "Authenticated Encryption (AEAD)",
+               "4 schemes")
+    _menu_item("  6 │", "Post-Quantum Cryptography",
+               "6 algorithms")
+    _menu_item("  7 │", "Advanced Cryptography",
+               "8 schemes")
+    _menu_item("  8 │", "Classical / Historical Ciphers",
+               "5 ciphers")
+    _menu_item("  9 │", "Cryptographic Protocols",
+               "5 protocols")
+    print("  ├──────────────────────────────────────────────────────────┤")
+    _menu_item("  D │", "Run Diagnostics",
+               "check all 83 modules")
+    _menu_item("  S │", "Setup Guide",
+               "__init__.py + known issues")
+    _menu_item("  Q │", "Quit", "")
+    print("  └──────────────────────────────────────────────────────────┘")
+
+    total = 83
+    print(f"\n  Total algorithms covered: {total}")
+    print(f"  Categories: 9  │  "
+          f"Symmetric: 26  │  Asymmetric: 16  │  "
+          f"Hash: 9  │  MAC: 4")
+    print(f"  AEAD: 4  │  PQC: 6  │  Advanced: 8  │  "
+          f"Classical: 5  │  Protocols: 5")
+
+    print("\n  Type a number or command (H for help, M for menu, CLS to clear).")
+
+
+def _package_directories() -> list[str]:
+    return [
+        "Modules",
+        "Modules/Symmetric_Key_Cryptography",
+        "Modules/Symmetric_Key_Cryptography/Block_Ciphers",
+        "Modules/Symmetric_Key_Cryptography/Block_Cipher_Modes",
+        "Modules/Symmetric_Key_Cryptography/Stream_Ciphers",
+        "Modules/Asymmetric_Key_Cryptography",
+        "Modules/Asymmetric_Key_Cryptography/Digital_Signature_Algorithm",
+        "Modules/Asymmetric_Key_Cryptography/Elliptic_Curve_Cryptography",
+        "Modules/Asymmetric_Key_Cryptography/Key_Exchange",
+        "Modules/Asymmetric_Key_Cryptography/Public_Key_Encryption",
+        "Modules/Cryptographic_Hash_Functions",
+        "Modules/Cryptographic_Hash_Functions/Hash_Algorithms",
+        "Modules/Message_Authentication",
+        "Modules/Message_Authentication/MAC_Algorithms",
+        "Modules/Authenticated_Encryption_AEAD",
+        "Modules/Authenticated_Encryption_AEAD/Integrated_Encryption_Integrity",
+        "Modules/Post_Quantum_Cryptography",
+        "Modules/Post_Quantum_Cryptography/Key_Encapsulation_or_Encryption",
+        "Modules/Post_Quantum_Cryptography/Post_Quantum_Signature",
+        "Modules/Advanced_Cryptography",
+        "Modules/Advanced_Cryptography/Zero_Knowledge_Proofs",
+        "Modules/Advanced_Cryptography/Homomorphic_Encryption",
+        "Modules/Advanced_Cryptography/Secure_Computation",
+        "Modules/Advanced_Cryptography/Secret_Sharing",
+        "Modules/Classical_or_Historical_Ciphers",
+        "Modules/Classical_or_Historical_Ciphers/Traditional_Ciphers",
+        "Modules/Cryptographic_Protocols",
+        "Modules/Cryptographic_Protocols/Secure_Communication_Protocols",
+    ]
+
+
+def _ensure_init_files() -> tuple[int, int]:
+    created = 0
+    existing = 0
+    for folder in _package_directories():
+        init_file = os.path.join(folder, "__init__.py")
+        if os.path.exists(init_file):
+            existing += 1
+            continue
+        os.makedirs(folder, exist_ok=True)
+        with open(init_file, "w", encoding="utf-8"):
+            pass
+        created += 1
+    return created, existing
+
+
 # ═══════════════════════════════════════════════════════════════════
 # CATEGORY 1 — Symmetric Key Cryptography
 # ═══════════════════════════════════════════════════════════════════
@@ -774,8 +864,12 @@ def run_diagnostics() -> None:
 
 
 def show_setup_guide() -> None:
-    """Show the __init__.py setup instructions."""
+    """Auto-create missing __init__.py files and show setup instructions."""
     _header("Setup Guide — __init__.py Files Required")
+
+    created, existing = _ensure_init_files()
+    print(f"\n  Package setup check complete: {created} created, {existing} already present.")
+
     print("""
   Python needs __init__.py in every folder to treat it as a package.
   Run this once from the project root directory:
@@ -860,48 +954,10 @@ def main() -> None:
     if root not in sys.path:
         sys.path.insert(0, root)
 
+    _clear()
+    _show_main_menu()
+
     while True:
-        _clear()
-        _banner()
-
-        print("  Select a cryptography category:\n")
-        print("  ┌──────────────────────────────────────────────────────────┐")
-        _menu_item("  1 │", "Symmetric Key Cryptography",
-                   "26 algorithms")
-        _menu_item("  2 │", "Asymmetric Key Cryptography",
-                   "16 algorithms")
-        _menu_item("  3 │", "Cryptographic Hash Functions",
-                   "9 algorithms")
-        _menu_item("  4 │", "Message Authentication (MAC)",
-                   "4 algorithms")
-        _menu_item("  5 │", "Authenticated Encryption (AEAD)",
-                   "4 schemes")
-        _menu_item("  6 │", "Post-Quantum Cryptography",
-                   "6 algorithms")
-        _menu_item("  7 │", "Advanced Cryptography",
-                   "8 schemes")
-        _menu_item("  8 │", "Classical / Historical Ciphers",
-                   "5 ciphers")
-        _menu_item("  9 │", "Cryptographic Protocols",
-                   "5 protocols")
-        print("  ├──────────────────────────────────────────────────────────┤")
-        _menu_item("  D │", "Run Diagnostics",
-                   "check all 83 modules")
-        _menu_item("  S │", "Setup Guide",
-                   "__init__.py + known issues")
-        _menu_item("  Q │", "Quit", "")
-        print("  └──────────────────────────────────────────────────────────┘")
-
-        total = 83
-        print(f"\n  Total algorithms covered: {total}")
-        print(f"  Categories: 9  │  "
-              f"Symmetric: 26  │  Asymmetric: 16  │  "
-              f"Hash: 9  │  MAC: 4")
-        print(f"  AEAD: 4  │  PQC: 6  │  Advanced: 8  │  "
-              f"Classical: 5  │  Protocols: 5")
-
-        print("\n  Type a number or command (H for help).")
-
         c = _resolve_main_choice(_get_choice("\n  CMD> "))
 
         if c == "1":
@@ -928,8 +984,13 @@ def main() -> None:
             show_setup_guide()
         elif c == "H":
             _show_main_help()
-            input("\n  Press Enter to continue...")
+            print("\n  Type another command at the prompt below.")
         elif c == "CLS":
+            _clear()
+            _show_main_menu()
+            continue
+        elif c == "M":
+            _show_main_menu()
             continue
         elif c in ("Q", "EXIT", "QUIT"):
             print("\n  Goodbye! 🔐\n")
