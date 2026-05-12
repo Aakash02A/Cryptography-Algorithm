@@ -1,3 +1,41 @@
-cryptography>=42.0.0
-pycryptodome>=3.20.0
-blake3
+# ============================================================================
+# Cryptography Algorithm Toolkit - Requirements
+# Python Version: 3.10+ (Recommended: 3.11+)
+# ============================================================================
+
+# Core Cryptographic Libraries (REQUIRED)
+cryptography>=42.0.0           # Modern cryptographic primitives
+pycryptodome>=3.20.0           # Legacy algorithm implementations (AES, DES, RSA, etc.)
+blake3>=1.0.0                  # BLAKE3 hash algorithm
+
+# Dependencies (REQUIRED - automatically installed with above)
+cffi>=2.0.0                    # C Foreign Function Interface (for cryptography)
+pycparser>=3.0                 # C parser (for cffi)
+
+# Optional Cryptographic Libraries (RECOMMENDED but not blocking)
+# These have graceful fallbacks if not installed
+# Uncomment to install:
+# twofish>=0.3.0              # Twofish block cipher (optional)
+# tiger>=0.3                  # Tiger hash algorithm (requires C++ build tools on Windows)
+# whirlpool>=1.0.0            # Whirlpool hash algorithm (requires C++ build tools on Windows)
+
+# Note: pygost (Russian GOST algorithms) is not available on PyPI
+# GOST modules (Magma, Kuznyechik) use Python implementations instead
+
+# ============================================================================
+# Installation Instructions:
+# ============================================================================
+# 1. Create virtual environment:
+#    python -m venv .venv
+#
+# 2. Activate virtual environment:
+#    Windows:  .\.venv\Scripts\activate
+#    Linux:    source .venv/bin/activate
+#
+# 3. Install dependencies:
+#    pip install -r requirements.txt
+#
+# 4. Run the toolkit:
+#    python main.py
+#
+# ============================================================================
