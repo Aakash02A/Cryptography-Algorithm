@@ -1,20 +1,22 @@
 # 🔎 Cryptography Algorithm Toolkit
 
-This repository is a comprehensive, modular toolkit covering 80+ cryptographic algorithms across 9 domains, ranging from Classical Ciphers to Post-Quantum Cryptography and Advanced Secure Computation techniques.
+**⚠️ SECURITY DISCLAIMER: Not Audited • Educational/Research Use Only • Not Recommended for Production Use ⚠️**
 
-## Features
-- **Symmetric & Asymmetric Cryptography:** Implementations of AES, RSA, ECC, and many more.
-- **Hash Functions & MACs:** From legacy (MD5/SHA-1) to modern standards (BLAKE3, SHA-3) and MAC algorithms.
-- **Advanced Cryptography:** Zero-Knowledge Proofs, Homomorphic Encryption (FHE/PHE), Secret Sharing.
-- **Post-Quantum Cryptography:** Next-generation primitives including Kyber, Dilithium, and Falcon.
+This repository is an educational and experimental cryptography toolkit for learning, research, benchmarking, and modular cryptographic exploration. It contains implementations of various cryptographic algorithms across multiple domains.
+
+This toolkit is explicitly **not intended for production use**. Implementations may not be constant-time, may be vulnerable to side-channel attacks, or may lack necessary security validations. If you need production-ready cryptography, use established, audited libraries such as [libsodium](https://doc.libsodium.org/), [cryptography.io](https://cryptography.io/), or [Tink](https://developers.google.com/tink).
+
+## 🎯 Project Scope
+
+- **Education:** To understand the inner workings of cryptographic primitives.
+- **Research:** For experimenting with algorithms, including legacy or experimental ones.
+- **Benchmarking:** Providing a framework to compare relative performance of various algorithms in a high-level language.
 
 ## 🚀 Installation & Setup
 
-Follow these steps to properly install and run the toolkit on your local machine.
-
 ### 1. Prerequisites
-- **Python 3.10+** is recommended.
-- A C/C++ compiler may be required for some optional hashing/encryption extensions (e.g., `tigerhash`).
+- **Python 3.10+** is required.
+- A C/C++ compiler may be needed for some optional hashing/encryption extensions (e.g., `tigerhash`).
 
 ### 2. Clone the Repository
 ```bash
@@ -23,7 +25,7 @@ cd Cryptography-Algorithm
 ```
 
 ### 3. Initialize a Virtual Environment
-It's highly recommended to use a virtual environment to manage dependencies.
+It is recommended to use a virtual environment to manage dependencies securely.
 
 **Windows:**
 ```powershell
@@ -38,22 +40,67 @@ source .venv/bin/activate
 ```
 
 ### 4. Install Dependencies
-Install all required third-party cryptographic libraries via `requirements.txt`:
+Install required packages:
 ```bash
 pip install -r requirements.txt
 ```
 
-> **Note:** Some packages (like `tigerhash` or `twofish`) might fail to install if a C compiler is missing. The toolkit gracefully handles missing dependencies by safely disabling the specific module while allowing the rest of the application to run smoothly.
+> **Note:** The toolkit handles missing optional C dependencies gracefully by safely disabling specific modules while allowing the application to run.
 
 ## 💻 Running the Toolkit
 
-Once the dependencies are installed, you can launch the main interactive menu:
+Launch the main interactive menu:
 
 ```bash
 python main.py
 ```
 
-From the main menu, you can navigate through the 9 categories and interact with the implementations. You can also run the built-in `Run Diagnostics` module from the menu to verify that all algorithms have been imported and initialized correctly.
+## 📊 Algorithm Status & Maturity
 
-## Project Structure
-The algorithms are organized into modular directories under `Modules/`. Each directory contains an `__init__.py` file to act as a proper Python package, ensuring clean and isolated namespace imports in `main.py`.
+| Algorithm Category | Status | Production Safe | Notes |
+| :--- | :--- | :--- | :--- |
+| **Classical Ciphers** (Caesar, Vigenère) | Legacy | ❌ No | Completely broken, educational only. |
+| **Legacy Hash Functions** (MD5, SHA-1) | Deprecated | ❌ No | Vulnerable to collision attacks. |
+| **Legacy Block Ciphers** (DES, ECB mode) | Deprecated | ❌ No | Insecure block size or mode. |
+| **Modern Block Ciphers** (AES-CBC, CTR) | Experimental | ❌ No | Educational implementations (likely not constant-time). |
+| **AEAD Schemes** (AES-GCM, ChaCha20-Poly1305)| Experimental | ❌ No | Do not use for actual data protection. |
+| **Asymmetric** (RSA, ECC, Key Exchange) | Experimental | ❌ No | Highly vulnerable to side-channels and timing attacks. |
+| **Post-Quantum** (Kyber, Dilithium) | Experimental | ❌ No | Based on evolving NIST draft standards. |
+| **Advanced Crypto** (ZKP, HE, MPC) | Incomplete | ❌ No | Theoretical demonstrations. |
+
+## 🏗 Project Structure
+
+The repository is modularly structured to separate different cryptographic domains. Note: Future architectural refactoring is planned to simplify naming and import hierarchies.
+
+```
+Modules/
+├── Symmetric_Key/             (Block Ciphers, Stream Ciphers, Modes)
+├── Asymmetric_Key/            (PKC, DSA, Key Exchange, ECC)
+├── Hash_Functions/            (SHA-2, SHA-3, BLAKE3, legacy)
+├── Message_Authentication/    (HMAC, CMAC, Poly1305)
+├── Authenticated_Encryption/  (AES-GCM, ChaCha20-Poly1305)
+├── Post_Quantum/              (PQC KEMs, Signatures)
+├── Advanced_Cryptography/     (ZKP, HE, Secret Sharing)
+├── Classical_Ciphers/         (Historical algorithms)
+└── Protocols/                 (High-level demo protocols)
+```
+
+## 🤝 Contributing
+
+We welcome contributions focused on educational clarity, algorithm correctness, and comprehensive testing.
+
+1. **Fork the repository** on GitHub.
+2. **Read the Guidelines:** Please review our [CONTRIBUTING.md](CONTRIBUTING.md) and [SECURITY.md](SECURITY.md).
+3. **Create a branch**: `git checkout -b feature/algorithm-name`
+4. **Test:** Include known-answer tests (KATs) and RFC/NIST test vectors where applicable.
+5. **Submit a PR:** Ensure your implementation is clearly documented as educational.
+
+## 📋 License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+## 🙋 Support & Security
+
+- **Security:** Please read [SECURITY.md](SECURITY.md) before reporting vulnerabilities.
+- **Issues:** Use the [issue tracker](../../issues) for bugs and feature requests.
+- **Discussions:** Use [Discussions](../../discussions) for general questions.
