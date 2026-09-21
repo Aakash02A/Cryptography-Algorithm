@@ -1,0 +1,7 @@
+services:
+  crypto-toolkit:
+    build:
+      context: .
+    image: cryptography-algorithm-toolkit:local
+    stdin_open: true
+    tty: true

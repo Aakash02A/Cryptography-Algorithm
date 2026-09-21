@@ -126,6 +126,26 @@ Start the interactive terminal interface:
 python main.py
 ```
 
+### Running with Docker
+
+Docker provides a consistent Python environment on Windows, macOS, and Linux.
+Docker Desktop or Docker Engine with Compose is required.
+
+Build and start the interactive toolkit:
+
+```bash
+docker compose run --rm crypto-toolkit
+```
+
+The equivalent Docker commands are:
+
+```bash
+docker build -t cryptography-algorithm-toolkit .
+docker run --rm -it cryptography-algorithm-toolkit
+```
+
+Use `Q` to exit the toolkit and remove the temporary container.
+
 ---
 
 ## ⌨️ CLI Navigation & Shortcuts
