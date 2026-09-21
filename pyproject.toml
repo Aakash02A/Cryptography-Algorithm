@@ -1,0 +1,40 @@
+﻿[project]
+name = "cryptography-algorithm-toolkit"
+version = "2.0.0"
+description = "80+ cryptographic algorithms in an interactive Python CLI — for education and research."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+  { name = "Aakash", github = "https://github.com/Aakash02A" }
+]
+keywords = [
+  "cryptography", "aes", "rsa", "post-quantum", "cli",
+  "security", "educational", "encryption", "hashing", "ecc"
+]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Education",
+  "Intended Audience :: Developers",
+  "Topic :: Security :: Cryptography",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/Aakash02A/Cryptography-Algorithm"
+Repository = "https://github.com/Aakash02A/Cryptography-Algorithm"
+Issues = "https://github.com/Aakash02A/Cryptography-Algorithm/issues"
+Changelog = "https://github.com/Aakash02A/Cryptography-Algorithm/blob/main/CHANGELOG.md"
+
+[project.scripts]
+crypto-toolkit = "main:main"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
