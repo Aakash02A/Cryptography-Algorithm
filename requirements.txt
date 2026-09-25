@@ -19,8 +19,7 @@ pycparser>=3.0                 # C parser (for cffi)
 # tiger>=0.3                  # Tiger hash algorithm (requires C++ build tools on Windows)
 # whirlpool>=1.0.0            # Whirlpool hash algorithm (requires C++ build tools on Windows)
 
-# Note: pygost (Russian GOST algorithms) is not available on PyPI
-# GOST modules (Magma, Kuznyechik) use Python implementations instead
+# GOST modules (Magma, Kuznyechik) use local Python implementations.
 
 # ============================================================================
 # Installation Instructions:

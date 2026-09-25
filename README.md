@@ -53,7 +53,7 @@ Whether you are studying how AES rounds work under the hood, tracing an RSA key 
 
 - 🎓 **80+ Algorithms Across 9 Disciplines:** Spans symmetric ciphers, public-key algorithms, hashing, MACs, AEAD, post-quantum schemes, advanced privacy-preserving cryptography, protocols, and historical systems.
 - 💻 **Interactive & Robust CLI:** Intuitive terminal UI with cross-platform screen management, input validation, and resilient error recovery.
-- 🔍 **Built-in Diagnostics (`D`):** Instantly test all 83 underlying modules for missing dependencies, syntax validity, and import integrity.
+- 🔍 **Built-in Diagnostics (`D`):** Instantly test all 80 registered modules for missing dependencies, syntax validity, and import integrity.
 - 🧩 **Modular Architecture:** Cleanly isolated directories per topic with dedicated READMEs, standard interfaces, and standalone execution support.
 - 🔬 **Inspect Intermediate States:** Trace mathematical workings, S-Box substitutions, polynomial operations, key schedules, and network protocol handshakes.
 - 📜 **Historical & Pedagogical Context:** Includes broken and deprecated algorithms (e.g., DES, RC4, MD5) alongside modern counterparts to teach cryptographic evolution and vulnerability analysis.
@@ -155,7 +155,7 @@ When running `main.py`, you can quickly jump between sections or execute utiliti
 | Command | Action | Description |
 | :---: | :--- | :--- |
 | `1` – `9` | **Select Category** | Navigate directly to one of the 9 cryptographic categories |
-| `D` / `DIAG` | **Run Diagnostics** | Validates all 83 algorithm modules and verifies dependencies |
+| `D` / `DIAG` | **Run Diagnostics** | Validates all 80 registered modules and verifies dependencies |
 | `S` / `SETUP` | **Setup Guide** | Inspects package configuration and regenerates missing package markers |
 | `H` / `HELP` | **Command Help** | Displays a summary of all interactive commands and shortcuts |
 | `CLS` / `CLEAR` | **Clear Screen** | Clears the terminal output and re-renders the banner |

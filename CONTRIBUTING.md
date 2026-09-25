@@ -22,8 +22,6 @@ source .venv/bin/activate  # Linux/macOS
 # Install dependencies
 pip install -r requirements.txt
 
-# Verify setup
-python verify_setup.py
 python main.py  # Try the CLI
 ```
 
@@ -299,9 +297,6 @@ python -c "from Modules.Category.Sub_Category.algorithm_name import algorithm_me
 # Run the full toolkit
 python main.py
 
-# Run verification
-python verify_setup.py
-
 # Run pytest (if tests are added to tests/ directory)
 pytest tests/
 ```
@@ -321,8 +316,6 @@ python -c "from Modules.Your_Category.algorithm_name import algorithm_menu; prin
 python main.py
 # Select your category and test your algorithm
 
-# 4. Run full verification
-python verify_setup.py
 ```
 
 ## 📤 Submitting a Pull Request
@@ -367,7 +360,6 @@ python verify_setup.py
    - ✅ Module imports successfully
    - ✅ Menu navigation works
    - ✅ Encryption/decryption tested
-   - ✅ verify_setup.py passes
    ```
 
 ## 📋 Checklist Before Submitting PR
@@ -378,7 +370,7 @@ python verify_setup.py
 - [ ] Module imports without errors
 - [ ] Menu function is named correctly (`{algorithm}_menu()`)
 - [ ] Registered in main.py
-- [ ] Tested with verify_setup.py
+- [ ] Tested the registered module through the CLI
 - [ ] No breaking changes to existing code
 - [ ] Added to appropriate category folder
 - [ ] __init__.py exists in all package folders

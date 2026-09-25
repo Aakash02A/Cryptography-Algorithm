@@ -1,12 +1,17 @@
-﻿[project]
+[project]
 name = "cryptography-algorithm-toolkit"
 version = "2.0.0"
-description = "80+ cryptographic algorithms in an interactive Python CLI — for education and research."
+description = "80+ cryptographic algorithms in an interactive Python CLI - for education and research."
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
 authors = [
-  { name = "Aakash", github = "https://github.com/Aakash02A" }
+  { name = "Aakash" }
+]
+dependencies = [
+  "cryptography>=42.0.0",
+  "pycryptodome>=3.20.0",
+  "blake3>=1.0.0",
 ]
 keywords = [
   "cryptography", "aes", "rsa", "post-quantum", "cli",
@@ -37,4 +42,11 @@ crypto-toolkit = "main:main"
 
 [build-system]
 requires = ["setuptools>=68", "wheel"]
-build-backend = "setuptools.backends.legacy:build"
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["Modules*"]
+exclude = ["V1*"]
+
+[tool.setuptools]
+py-modules = ["main"]

@@ -3,29 +3,32 @@ import sys
 
 
 # ── Cryptography Algorithm Toolkit ───────────────────────────────────────────
-# Main entry point — connects all 83 modules across 9 categories.
+# Main entry point — connects all registered modules across 9 categories.
 # Run: python main.py
 
 
 # ── Safe Import Helper ────────────────────────────────────────────────────────
+
+def _load(module_path: str, func_name: str):
+    """Load a menu function and return the function plus any import error."""
+    import importlib
+    try:
+        module = importlib.import_module(module_path)
+        function = getattr(module, func_name, None)
+        if function is None:
+            return None, AttributeError(f"missing function {func_name}")
+        return function, None
+    except Exception as exc:
+        return None, exc
+
 
 def _import(module_path: str, func_name: str):
     """
     Safely import a menu function from a module path.
     Returns the function or None if import fails.
     """
-    import importlib.util
-    import importlib
-    try:
-        # Convert file path to module import path
-        mod = importlib.import_module(module_path)
-        return getattr(mod, func_name, None)
-    except ModuleNotFoundError as e:
-        return None
-    except ImportError as e:
-        return None
-    except Exception:
-        return None
+    function, _ = _load(module_path, func_name)
+    return function
 
 
 def _run(module_path: str, func_name: str, label: str) -> None:
@@ -149,19 +152,16 @@ def _show_main_menu() -> None:
                "5 protocols")
     print("  ├──────────────────────────────────────────────────────────┤")
     _menu_item("  D │", "Run Diagnostics",
-               "check all 83 modules")
+               f"check all {len(_ALL_MODULES)} modules")
     _menu_item("  S │", "Setup Guide",
                "__init__.py + known issues")
     _menu_item("  Q │", "Quit", "")
     print("  └──────────────────────────────────────────────────────────┘")
 
-    total = 83
-    print(f"\n  Total algorithms covered: {total}")
-    print(f"  Categories: 9  │  "
-          f"Symmetric: 26  │  Asymmetric: 16  │  "
-          f"Hash: 9  │  MAC: 4")
-    print(f"  AEAD: 4  │  PQC: 6  │  Advanced: 8  │  "
-          f"Classical: 5  │  Protocols: 5")
+    total = len(_ALL_MODULES)
+    print(f"\n  Registered modules: {total}")
+    print("  Categories: 9 | Symmetric: 26 | Asymmetric: 13 | Hash: 9 | MAC: 4")
+    print("  AEAD: 4 | PQC: 6 | Advanced: 8 | Classical: 5 | Protocols: 5")
 
     print("\n  Type a number or command (H for help, M for menu, CLS to clear).")
 
@@ -743,21 +743,21 @@ _ALL_MODULES = [
     ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.magma",       "magma_menu"),
     ("Modules.Symmetric_Key_Cryptography.Block_Ciphers.kuznyechik",  "kuznyechik_menu"),
     # Symmetric — Block Cipher Modes
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ecb",    "ecb_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.cbc",    "cbc_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.cfb",    "cfb_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ofb",    "ofb_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ctr",    "ctr_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.gcm",    "gcm_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.ccm",    "ccm_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.xts",    "xts_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Ecb",    "ecb_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Cbc",    "cbc_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Cfb",    "cfb_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Ofb",    "ofb_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Ctr",    "ctr_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Gcm",    "gcm_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Ccm",    "ccm_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Block_Cipher_Modes.Xts",    "xts_menu"),
     # Symmetric — Stream Ciphers
-    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.rc4",        "rc4_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.salsa20",    "salsa20_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.chacha20",   "chacha20_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.hc128",      "hc128_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.rabbit",     "rabbit_menu"),
-    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.a51",        "a51_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.Rc4",        "rc4_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.Salsa20",    "salsa20_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.Chacha20",   "chacha20_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.Hc128",      "hc128_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.Rabbit",     "rabbit_menu"),
+    ("Modules.Symmetric_Key_Cryptography.Stream_Ciphers.A51",         "a51_menu"),
     # Asymmetric — Public Key Encryption
     ("Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.rsa",       "rsa_menu"),
     ("Modules.Asymmetric_Key_Cryptography.Public_Key_Encryption.ElGamal",   "elgamal_menu"),
@@ -770,7 +770,7 @@ _ALL_MODULES = [
     ("Modules.Asymmetric_Key_Cryptography.Key_Exchange.MQV",                "mqv_menu"),
     # Asymmetric — Digital Signatures
     ("Modules.Asymmetric_Key_Cryptography.Digital_Signature_Algorithm.RSA_Signature", "rsa_signature_menu"),
-    ("Modules.Asymmetric_Key_Cryptography.Digital_Signature_Algorithm.DSA",           "dsa_menu"),
+    ("Modules.Asymmetric_Key_Cryptography.Digital_Signature_Algorithm.dsa",           "dsa_menu"),
     ("Modules.Asymmetric_Key_Cryptography.Digital_Signature_Algorithm.ECDSA",         "ecdsa_menu"),
     ("Modules.Asymmetric_Key_Cryptography.Digital_Signature_Algorithm.EdDSA",         "eddsa_menu"),
     ("Modules.Asymmetric_Key_Cryptography.Digital_Signature_Algorithm.Schnorr",       "schnorr_menu"),
@@ -809,7 +809,7 @@ _ALL_MODULES = [
     ("Modules.Advanced_Cryptography.Homomorphic_Encryption.phe",                       "phe_menu"),
     ("Modules.Advanced_Cryptography.Secure_Computation.smpc",                          "smpc_menu"),
     ("Modules.Advanced_Cryptography.Secure_Computation.ot",                            "ot_menu"),
-    ("Modules.Advanced_Cryptography.Secret_Sharing.Shamir_s_Secret_Sharing",           "sss_menu"),
+    ("Modules.Advanced_Cryptography.Secret_Sharing.Shamir_s_Secret_Sharing",           "shamir_menu"),
     # Classical
     ("Modules.Classical_or_Historical_Ciphers.Traditional_Ciphers.Caesar",    "caesar_menu"),
     ("Modules.Classical_or_Historical_Ciphers.Traditional_Ciphers.Vigenere",  "vigenere_menu"),
@@ -828,20 +828,20 @@ _ALL_MODULES = [
 def run_diagnostics() -> None:
     """Check which modules import successfully."""
     _header("Module Diagnostics — Import Status Check")
-    print(f"\n  Checking {len(_ALL_MODULES)} modules...\n")
+    print(f"\n  Checking {len(_ALL_MODULES)} registered modules...\n")
 
     ok_count   = 0
     fail_count = 0
     failures   = []
 
     for mod_path, func_name in _ALL_MODULES:
-        fn = _import(mod_path, func_name)
+        fn, error = _load(mod_path, func_name)
         short = mod_path.split(".")[-1]
         if fn:
             print(f"  ✅ {short:<30}  {mod_path.split('.')[-2]}")
             ok_count += 1
         else:
-            print(f"  ❌ {short:<30}  {mod_path}")
+            print(f"  ❌ {short:<30}  {type(error).__name__}: {error}")
             fail_count += 1
             failures.append(mod_path)
 
@@ -858,7 +858,7 @@ def run_diagnostics() -> None:
         print(f"    1. Check file exists at the expected path")
         print(f"    2. Add __init__.py to each folder (see setup guide below)")
         print(f"    3. Install missing dependencies:")
-        print(f"       pip install cryptography pycryptodome twofish pygost")
+        print(f"       python -m pip install -r requirements.txt")
 
     input("\n  Press Enter to return to menu...")
 
@@ -920,26 +920,12 @@ def show_setup_guide() -> None:
 
   ── Known Issues from Your Report ───────────────────────────────────
 
-  1. Folder typo: rename  Symmentric  →  Symmetric
-     (main.py uses 'Symmentric' to match your current folder name)
-
-  2. AEAD folder name has parentheses:
-     Authenticated_Encryption(AEAD)  →  Authenticated_Encryption_AEAD
-     (main.py uses underscore version — rename the folder)
-
-  3. McEliece double-dot:
-     mceliece..py  →  mceliece.py
-
-  4. AEAD README has a space:
-     README .md  →  README.md
-
-  5. Shamir filename has apostrophe:
-     Shamir's_Secret_Sharing.py  →  Shamir_s_Secret_Sharing.py
-     (or update the import path in menu_advanced() above)
+    The package structure is already present in this checkout; no manual
+    folder renames are required.
 
   ── Dependencies ─────────────────────────────────────────────────────
 
-  pip install cryptography pycryptodome twofish pygost
+  python -m pip install -r requirements.txt
     """)
     input("  Press Enter to return to menu...")
 

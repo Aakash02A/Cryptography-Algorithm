@@ -22,7 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - **80+ cryptographic algorithms** across 9 disciplines in a fully modular architecture
 - **Interactive CLI** (`main.py`) with cross-platform screen management, input validation, and resilient error recovery
-- **Built-in Diagnostics** (`D` / `DIAG`) — validates all 83 modules for missing dependencies, syntax validity, and import integrity
+- **Built-in Diagnostics** (`D` / `DIAG`) — validates all 80 registered modules for missing dependencies, syntax validity, and import integrity
 - **Symmetric Key Cryptography** — 17 block ciphers (AES, DES, 3DES, Blowfish, Twofish, Camellia, CAST-128, IDEA, RC2, RC5, RC6, SEED, ARIA, Serpent, SM4, Magma, Kuznyechik), 6 block modes, 6 stream ciphers
 - **Asymmetric Key Cryptography** — RSA, ElGamal, Paillier, Rabin, DH, ECDH, X25519, MQV, ECDSA, Ed25519, Ed448, Curve25519, SM2, DSA, Schnorr, BLS
 - **Hash Functions** — MD5, SHA-1, SHA-2 family, SHA-3/Keccak, BLAKE2, BLAKE3, RIPEMD-160, Whirlpool, Tiger

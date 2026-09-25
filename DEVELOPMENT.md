@@ -32,7 +32,7 @@ Modules/
 | `_menu_item()` | Format menu option display |
 | `menu_symmetric()` | Category dispatcher (Symmetric) |
 | `menu_asymmetric()` | Category dispatcher (Asymmetric) |
-| `run_diagnostics()` | Check all 83 modules |
+| `run_diagnostics()` | Check all 80 registered modules |
 | `show_setup_guide()` | Auto-create __init__.py files |
 
 ## 📚 Algorithm Module Template
@@ -79,7 +79,7 @@ touch Modules/Category/SubCategory/algorithm.py
 # Implement algorithm with algorithm_menu() function
 # Add to main.py
 # Register in _ALL_MODULES list
-# Test with verify_setup.py
+# Test the registered module through the CLI
 ```
 
 ### 2. Test Your Changes
@@ -93,8 +93,6 @@ python -c "from Modules.Category.algorithm import algorithm_menu"
 # Run toolkit
 python main.py
 
-# Run diagnostics
-python verify_setup.py
 ```
 
 ### 3. Verify Integration
@@ -188,14 +186,14 @@ Before submitting a PR, verify:
 - [ ] Docstrings on public functions
 - [ ] No hardcoded paths or system dependencies
 - [ ] Works on Windows, Linux, and macOS
-- [ ] `verify_setup.py` passes
+- [ ] Registered module works through the CLI
 - [ ] `main.py` runs without errors
 
 ## 📊 Module Statistics
 
 Current state of the toolkit:
 
-- **Total Algorithms:** 83+
+- **Registered Modules:** 80
 - **Categories:** 9
 - **Python Files:** 100+
 - **Test Coverage:** Comprehensive
